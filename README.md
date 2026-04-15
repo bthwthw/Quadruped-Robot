@@ -7,7 +7,7 @@ This project focuses on developing a robust control system for a 8-DOF quadruped
 ## 📂 Directory Structure
 To maintain a clean and modular environment, the project is organized as follows:
 
-* **/Models**: Contains Webots world files (`.wbt`), robot descriptions (URDF/PROTO), and 3D assets (STL). 
+* **/Worlds**: Contains Webots world files (`.wbt`), robot descriptions (URDF/PROTO), and 3D assets (STL). 
     * *Primary Owner: Tran*
 * **/Dynamics**: Stores mathematical derivations of the robot's EOM (Equations of Motion), including M, C, and G matrices.
     * *Primary Owner: Son*
