@@ -1,6 +1,7 @@
 #include <webots/Robot.hpp>
 #include <webots/Motor.hpp>
 #include <webots/PositionSensor.hpp>
+#include <webots/Keyboard.hpp>
 #include "GaitPlanner.hpp"
 #include "LegController.hpp"
 
@@ -9,6 +10,9 @@ using namespace webots;
 int main(int argc, char **argv) {
     Robot *robot = new Robot();
     int timeStep = (int)robot->getBasicTimeStep();
+    
+    Keyboard *keyboard = robot->getKeyboard();
+    keyboard->enable(timeStep);
 
     const char* motorNames[8] = {"motor_FL_hip", "motor_FL_knee", "motor_FR_hip", "motor_FR_knee", "motor_BR_hip", "motor_BR_knee", "motor_BL_hip", "motor_BL_knee"};
     const char* sensorNames[8] = {"sensor_FL_hip", "sensor_FL_knee", "sensor_FR_hip", "sensor_FR_knee", "sensor_BR_hip", "sensor_BR_knee", "sensor_BL_hip", "sensor_BL_knee"};
@@ -29,23 +33,33 @@ int main(int argc, char **argv) {
     double dt = timeStep / 1000.0;
     double alpha_filter = 0.15;
     bool first_step = true;
-
-    planner.get_Pace(0.0, q_ref);
+    
+    char current_gait = 'T';
+    planner.get_Trot(0.0, q_ref);
+    
     double start_time = robot->getTime();
 
     while (robot->step(timeStep) != -1) {
         double t_elapsed = robot->getTime() - start_time;
-
-        for (int i=0; i<8; i++) q_ref_prev[i] = q_ref[i];
         
-        // 1. TÍNH TOÁN QUỸ ĐẠO BẰNG PLANNER
-        if (t_elapsed < 0.5) {
-            planner.get_Pace(0.0, q_ref);
-        } else {
-            planner.get_Pace(t_elapsed - 2.0, q_ref); 
+        int key = keyboard->getKey();
+        if (key == 'T' || key == 't') current_gait = 'T';
+        else if (key == 'B' || key == 'b') current_gait = 'B';
+        else if (key == 'P' || key == 'p') current_gait = 'P';
+        else if (key == 'W' || key == 'w') current_gait = 'W';
+
+        // gait planner 
+        for (int i=0; i<8; i++) q_ref_prev[i] = q_ref[i];     
+        double gait_time = (t_elapsed < 0.5) ? 0.0 : (t_elapsed - 0.5); 
+        switch (current_gait) {
+            case 'T': planner.get_Trot(gait_time, q_ref); break;
+            case 'B': planner.get_Bound(gait_time, q_ref); break;
+            case 'P': planner.get_Pace(gait_time, q_ref); break;
+            case 'W': planner.get_Walk(gait_time, q_ref); break;
+            default:  planner.get_Trot(gait_time, q_ref); break; // Dự phòng an toàn
         }
 
-        // 2. ĐỌC CẢM BIẾN & LỌC NHIỄU
+        // read sensor 
         for (int i = 0; i < 8; i++) {
             dq_ref[i] = (q_ref[i] - q_ref_prev[i]) / dt;
             if (dq_ref[i] > 20.0) dq_ref[i] = 20.0; else if (dq_ref[i] < -20.0) dq_ref[i] = -20.0;
@@ -61,11 +75,10 @@ int main(int argc, char **argv) {
         }
         first_step = false;
 
-        // 3. ĐIỀU KHIỂN ĐỘNG CƠ
+        // motor control 
         for (int leg = 0; leg < 4; leg++) {
             int h = leg * 2; int k = leg * 2 + 1;
-            
-            if (t_elapsed < 0.2) {
+            if (t_elapsed < 0.5) {
                 // Đứng dậy bằng Position Control
                 if (motors[h] != NULL) motors[h]->setPosition(q_ref[h]);
                 if (motors[k] != NULL) motors[k]->setPosition(q_ref[k]);
