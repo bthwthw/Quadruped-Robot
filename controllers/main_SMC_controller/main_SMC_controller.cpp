@@ -12,9 +12,9 @@ using namespace webots;
 
 // --- HÀM TÍNH ĐỘNG HỌC NGHỊCH (GIẢI BẰNG HÀM COSIN) ---
 void calculate_Leg_IK(double t_total, double offset, double* q_ref_pair) {
-    double T = 0.4;            
-    double S = 0.08;            
-    double H = 0.04; 
+    double T = 0.8;       // chu kỳ      
+    double S = 0.14;      // sải chân 
+    double H = 0.03;      // nhấc chân 
     double y0 = -0.23;          
     double L1 = 0.2;           
     double L2 = 0.2; 
@@ -100,7 +100,8 @@ int main(int argc, char **argv) {
     double q_ref[8] = {0}, dq_ref[8] = {0}, ddq_ref[8] = {0};
     double q[8] = {0}, dq[8] = {0}, q_prev[8] = {0}, q_ref_prev[8] = {0};
     double dt = timeStep / 1000.0;
-    double alpha_filter = 0.05;
+    
+    double alpha_filter = 0.15;
     bool first_step = true;
 
     double tau_integral[8] = {0};
@@ -130,7 +131,13 @@ int main(int argc, char **argv) {
         for (int i = 0; i < 8; i++) {
             if (sensors[i] != NULL) q[i] = sensors[i]->getValue();
             if (first_step) q_prev[i] = q[i];
-            dq[i] = (q[i] - q_prev[i]) / dt;
+            
+            // Tính đạo hàm thô
+            double raw_dq = (q[i] - q_prev[i]) / dt;
+            
+            // ÁP DỤNG BỘ LỌC (Cực kỳ quan trọng để SMC không bị giật)
+            dq[i] = alpha_filter * raw_dq + (1.0 - alpha_filter) * dq[i];
+            
             if (dq[i] > 30.0) dq[i] = 30.0;
             if (dq[i] < -30.0) dq[i] = -30.0;
             q_prev[i] = q[i];
@@ -176,7 +183,7 @@ int main(int argc, char **argv) {
                     }
                 }
 
-                double Phi = 0.5; // Độ dày lớp biên (Boundary Layer) để chống giật (Chattering)
+                double Phi = 5.0; // Độ dày lớp biên (Boundary Layer) để chống giật (Chattering)
                 
                 for(int j = 0; j < 2; j++) {
                     // 1. Tính sai số vị trí và vận tốc
@@ -195,7 +202,7 @@ int main(int argc, char **argv) {
                     tau_leg[j] = K_gain[j] * sat_s;
                 }
                 // TÍCH PHÂN BÙ TRỌNG LỰC
-                double Ki_hip = (leg < 2) ? 80.0 : 40.0;   
+                double Ki_hip = (leg < 2) ? 70.0 : 40.0;   
                 double Ki_knee = 15.0;  
 
                 tau_integral[h] += Ki_hip * (q_ref[h] - q[h]) * dt;
