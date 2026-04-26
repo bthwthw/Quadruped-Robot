@@ -10,70 +10,64 @@ extern "C" {
 
 using namespace webots;
 
-// --- HÀM TÍNH ĐỘNG HỌC NGHỊCH (QUỸ ĐẠO BÁN ELIP) ---
-void calculate_Leg_IK(double t_total, double offset, double knee_dir, double* q_ref_pair, bool is_right_leg) {
+// --- HÀM TÍNH ĐỘNG HỌC NGHỊCH (GIẢI BẰNG HÀM COSIN) ---
+void calculate_Leg_IK(double t_total, double offset, double* q_ref_pair) {
     double T = 0.4;            
-    double S = 0.15;            
-    double H = 0.08; 
-    double y0 = -0.28;
-            
+    double S = 0.08;            
+    double H = 0.04; 
+    double y0 = -0.23;          
     double L1 = 0.2;           
     double L2 = 0.2; 
 
-    double phase = fmod(t_total / T + offset, 1.0);
+    // Theta
+    double theta = (t_total / T + offset) * 2.0 * M_PI;
+    double theta_mod = fmod(theta, 2.0 * M_PI);
+    if (theta_mod < 0) theta_mod += 2.0 * M_PI;
+
     double x = 0.0, y = 0.0;
 
-    // Lật ngược quỹ đạo X nếu là chân bên phải (FR, BR)
-    double direction_X = is_right_leg ? -1.0 : 1.0; 
-
-    if (phase < 0.5) {
-        // PHA LĂNG (SWING)
-        double theta = phase * 2.0 * M_PI; 
-        x = direction_X * -(S / 2.0) * cos(theta); // Thêm direction_X vào X
-        y = y0 + H * sin(theta);           
+    // Quỹ đạo Elip thuần
+    if (theta_mod < M_PI) {
+        x = -(S / 2.0) * cos(theta_mod); 
+        y = y0 + H * sin(theta_mod);           
     } else {
-        // PHA TỰA (STANCE)
-        double theta = (phase - 0.5) * 2.0 * M_PI; 
-        x = direction_X * (S / 2.0) * cos(theta);  // Thêm direction_X vào X
+        x = (S / 2.0) * cos(theta_mod - M_PI);  
         y = y0;                            
     }
 
-    // --- ĐỘNG HỌC NGHỊCH (GIỮ NGUYÊN BẢO VỆ TOÁN HỌC) ---
+    // Khóa Toán Học
     double L_square = x * x + y * y;
-    double L_length = sqrt(L_square);
-    
-    if (L_length >= (L1 + L2)) {
-        double scale = (L1 + L2 - 0.001) / L_length; 
-        x *= scale;
-        y *= scale;
-        L_square = x * x + y * y; 
+    double max_reach = L1 + L2 - 0.001;
+    if (L_square > max_reach * max_reach) {
+        double scale = max_reach / sqrt(L_square);
+        x *= scale; y *= scale;
+        L_square = x * x + y * y;
     }
 
-    double D = (L_square - L1 * L1 - L2 * L2) / (2.0 * L1 * L2);
-    if (D > 1.0) D = 1.0; 
-    if (D < -1.0) D = -1.0;
-    
-    double q2 = knee_dir * acos(D);
+    // ĐỊNH LÝ HÀM COSIN (Chuẩn xác, không bị nhảy góc)
+    double cos_q2 = (L_square - L1*L1 - L2*L2) / (2.0 * L1 * L2);
+    if (cos_q2 > 1.0) cos_q2 = 1.0;
+    if (cos_q2 < -1.0) cos_q2 = -1.0;
+
+    // CHÌA KHÓA: Ép knee_dir ngầm định là âm (-) để khớp gập ra sau
+    double q2 = -acos(cos_q2); 
+
+    // Góc háng
     double alpha = atan2(y, x); 
     double beta = atan2(L2 * sin(q2), L1 + L2 * cos(q2));
-    
-    // ĐÂY LÀ CHÌA KHÓA: Tính q1 theo toán học trước
     double q1_math = alpha - beta;
 
-    // BÙ TRỪ TỌA ĐỘ: Cộng thêm 90 độ (PI/2) để khớp với trục Webots
-    double q1_webots = q1_math + (M_PI / 2.0); 
-
-    q_ref_pair[0] = q1_webots; // Gán góc đã bù trừ cho Háng
-    q_ref_pair[1] = q2;        // Khớp gối giữ nguyên
+    // Bù trừ Webots
+    q_ref_pair[0] = q1_math + M_PI / 2.0; 
+    q_ref_pair[1] = q2;        
 }
 
 // --- HÀM TẠO QUỸ ĐẠO TROT ---
 void generate_Trot_Trajectory(double t, double* q_ref) {
-    // Truyền false cho chân Trái, true cho chân Phải
-    calculate_Leg_IK(t, 0.0, -1.0, &q_ref[0], false); // FL (Trái)
-    calculate_Leg_IK(t, 0.5, -1.0, &q_ref[2], true);  // FR (Phải)
-    calculate_Leg_IK(t, 0.0, -1.0, &q_ref[4], true);  // BR (Phải)
-    calculate_Leg_IK(t, 0.5, -1.0, &q_ref[6], false); // BL (Trái)
+    calculate_Leg_IK(t, 0.0, &q_ref[0]); // FL
+    calculate_Leg_IK(t, 0.5, &q_ref[2]); // FR
+    calculate_Leg_IK(t, 0.0, &q_ref[4]); // BR
+    calculate_Leg_IK(t, 0.5, &q_ref[6]); // BL
 }
 
 int main(int argc, char **argv) {
@@ -106,83 +100,131 @@ int main(int argc, char **argv) {
     double q_ref[8] = {0}, dq_ref[8] = {0}, ddq_ref[8] = {0};
     double q[8] = {0}, dq[8] = {0}, q_prev[8] = {0}, q_ref_prev[8] = {0};
     double dt = timeStep / 1000.0;
-    double lambda_gain[2] = {150.0, 150.0};
     double alpha_filter = 0.05;
     bool first_step = true;
 
-    // Khởi tạo vị trí q_ref ban đầu để tránh giật ở vòng lặp đầu
+    double tau_integral[8] = {0};
+
     generate_Trot_Trajectory(0.0, q_ref);
+    double start_time = robot->getTime();
 
     while (robot->step(timeStep) != -1) {
         double t = robot->getTime();
-        
-        // CẬP NHẬT QUỸ ĐẠO TROT TRỰC TIẾP
-        for (int i=0; i<8; i++) q_ref_prev[i] = q_ref[i];
-        generate_Trot_Trajectory(t, q_ref);
+        double t_elapsed = t - start_time;
 
-        // TÍNH dq_ref VỚI BỘ LỌC
+        for (int i=0; i<8; i++) q_ref_prev[i] = q_ref[i];
+        
+        if (t_elapsed < 2.0) {
+            generate_Trot_Trajectory(0.0, q_ref); 
+        } else {
+            generate_Trot_Trajectory(t - 2.0, q_ref); 
+        }
+
         for (int i = 0; i < 8; i++) {
-            double raw_dq_ref = (q_ref[i] - q_ref_prev[i]) / dt; 
-            if (raw_dq_ref > 20.0) raw_dq_ref = 20.0;
-            if (raw_dq_ref < -20.0) raw_dq_ref = -20.0;
-            dq_ref[i] = alpha_filter * raw_dq_ref + (1.0 - alpha_filter) * dq_ref[i]; 
+            dq_ref[i] = (q_ref[i] - q_ref_prev[i]) / dt;
+            if (dq_ref[i] > 20.0) dq_ref[i] = 20.0;
+            if (dq_ref[i] < -20.0) dq_ref[i] = -20.0;
             ddq_ref[i] = 0.0;
         }
 
-        // ĐỌC SENSOR VÀ KHÓA MÕM VẬN TỐC
         for (int i = 0; i < 8; i++) {
-            if (sensors[i] != NULL) {
-                q[i] = sensors[i]->getValue();
-            } else {
-                q[i] = 0.0;
-            }
-            if (first_step) {
-                q_prev[i] = q[i];
-            }
-            
-            // Tính vận tốc thực tế
+            if (sensors[i] != NULL) q[i] = sensors[i]->getValue();
+            if (first_step) q_prev[i] = q[i];
             dq[i] = (q[i] - q_prev[i]) / dt;
-            
-            // KẸP CHẶT: Chó không bao giờ quất chân nhanh hơn 30 rad/s
             if (dq[i] > 30.0) dq[i] = 30.0;
             if (dq[i] < -30.0) dq[i] = -30.0;
-            
             q_prev[i] = q[i];
         }
         first_step = false;
 
-        // ĐIỀU KHIỂN TỪNG CHÂN
         for (int leg = 0; leg < 4; leg++) {
             int h = leg * 2; int k = leg * 2 + 1;
-            double q_leg[2] = {q[h], q[k]}, dq_leg[2] = {dq[h], dq[k]};
-            double q_r_l[2] = {q_ref[h], q_ref[k]}, dq_r_l[2] = {dq_ref[h], dq_ref[k]};
-            double ddq_r_l[2] = {0, 0}, tau_leg[2] = {0, 0};
             
-            double K_gain[2] = {80.0, 80.0};
-            
-            // if (leg == 0 || leg == 1) { 
-                // Chân trước gánh ngực nặng -> BƠM MẠNH LÊN 150!
-                // K_gain_dynamic[0] = 150.0; // Hip (Háng)
-                // K_gain_dynamic[1] = 100.0; // Knee (Gối)
-            // } else {                    
-                // Chân sau gánh mông nhẹ -> Nhẹ nhàng thôi để không chổng mông
-                // K_gain_dynamic[0] = 100.0;  // Hip
-                // K_gain_dynamic[1] = 60.0;  // Knee
-            // }
-            
-            SMC_controller(q_r_l, dq_r_l, ddq_r_l, q_leg, dq_leg, K_gain, lambda_gain, tau_leg);
-            
-            // KHÓA MÕM LỰC: Ép chặt ở mức an toàn vật lý của motor
-            if (tau_leg[0] > 45.0) tau_leg[0] = 45.0;
-            if (tau_leg[0] < -45.0) tau_leg[0] = -45.0;
-            if (tau_leg[1] > 45.0) tau_leg[1] = 45.0;
-            if (tau_leg[1] < -45.0) tau_leg[1] = -45.0;
-            
-            // ĐẢO DẤU LỰC (vẫn giữ nguyên để bù trừ hệ tọa độ)
-            if (motors[h] != NULL) motors[h]->setTorque(tau_leg[0]); 
-            if (motors[k] != NULL) motors[k]->setTorque(tau_leg[1]);
-            
-            std::cout << "Time: " << t << " | Leg " << leg << " | Tau_Hip: " << tau_leg[0] << " | Tau_Knee: " << tau_leg[1] << std::endl;
+            if (t_elapsed < 1.0) {
+                // POSITION CONTROL ĐỨNG DẬY
+                if (motors[h] != NULL) motors[h]->setPosition(q_ref[h]);
+                if (motors[k] != NULL) motors[k]->setPosition(q_ref[k]);
+            } else {
+                // SMC TROT
+                if (motors[h] != NULL) motors[h]->setPosition(INFINITY);
+                if (motors[k] != NULL) motors[k]->setPosition(INFINITY);
+
+                double q_leg[2] = {q[h], q[k]}, dq_leg[2] = {dq[h], dq[k]};
+                double q_r_l[2] = {q_ref[h], q_ref[k]}, dq_r_l[2] = {dq_ref[h], dq_ref[k]};
+                double ddq_r_l[2] = {0, 0}, tau_leg[2] = {0, 0};
+                
+                double K_gain[2];
+                double lambda_gain_tuned[2];
+
+                if (t_elapsed < 2.0) {
+                    if (leg < 2) { 
+                        K_gain[0] = 150.0; K_gain[1] = 80.0;  
+                        lambda_gain_tuned[0] = 200.0; lambda_gain_tuned[1] = 200.0;
+                    } else {
+                        K_gain[0] = 50.0; K_gain[1] = 80.0; 
+                        lambda_gain_tuned[0] = 100.0; lambda_gain_tuned[1] = 200.0;
+                    }
+                } else {
+                    if (leg < 2) {
+                        K_gain[0] = 100.0; K_gain[1] = 40.0;  
+                        lambda_gain_tuned[0] = 150.0; lambda_gain_tuned[1] = 150.0;
+                    } else {
+                        K_gain[0] = 30.0;  
+                        K_gain[1] = 40.0;  
+                        lambda_gain_tuned[0] = 60.0;  
+                        lambda_gain_tuned[1] = 150.0; 
+                    }
+                }
+
+                double Phi = 0.5; // Độ dày lớp biên (Boundary Layer) để chống giật (Chattering)
+                
+                for(int j = 0; j < 2; j++) {
+                    // 1. Tính sai số vị trí và vận tốc
+                    double e = q_r_l[j] - q_leg[j];
+                    double de = dq_r_l[j] - dq_leg[j];
+                    
+                    // 2. Phương trình mặt trượt (Sliding Surface)
+                    double s = de + lambda_gain_tuned[j] * e;
+                    
+                    // 3. Hàm Saturation mềm (thay cho hàm Sign để gối không bị giật)
+                    double sat_s = s / Phi;
+                    if (sat_s > 1.0) sat_s = 1.0;
+                    if (sat_s < -1.0) sat_s = -1.0;
+                    
+                    // 4. Xuất lực Torque
+                    tau_leg[j] = K_gain[j] * sat_s;
+                }
+                // TÍCH PHÂN BÙ TRỌNG LỰC
+                double Ki_hip = (leg < 2) ? 80.0 : 40.0;   
+                double Ki_knee = 15.0;  
+
+                tau_integral[h] += Ki_hip * (q_ref[h] - q[h]) * dt;
+                tau_integral[k] += Ki_knee * (q_ref[k] - q[k]) * dt;
+
+                double max_int_hip = (leg < 2) ? 45.0 : 25.0; 
+                double max_int_knee = 12.0;
+
+                if(tau_integral[h] > max_int_hip) tau_integral[h] = max_int_hip;
+                if(tau_integral[h] < -max_int_hip) tau_integral[h] = -max_int_hip;
+                if(tau_integral[k] > max_int_knee) tau_integral[k] = max_int_knee;
+                if(tau_integral[k] < -max_int_knee) tau_integral[k] = -max_int_knee;
+
+                tau_leg[0] += tau_integral[h];
+                tau_leg[1] += tau_integral[k];
+
+                // GIẢM CHẤN NHÂN TẠO
+                double damping_coefficient = 1.5; 
+                tau_leg[0] -= damping_coefficient * dq_leg[0];
+                tau_leg[1] -= damping_coefficient * dq_leg[1];
+
+                for(int j=0; j<2; j++) {
+                    if (tau_leg[j] > 100.0) tau_leg[j] = 100.0;
+                    if (tau_leg[j] < -100.0) tau_leg[j] = -100.0;
+                }
+
+                if (motors[h] != NULL) motors[h]->setTorque(tau_leg[0]); 
+                if (motors[k] != NULL) motors[k]->setTorque(tau_leg[1]);
+            }
         }
     }
     delete robot;

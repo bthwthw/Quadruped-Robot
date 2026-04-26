@@ -17,8 +17,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation 0.1601688167277827 0.24453414353503292 -0.9563205544134299 1.074509905920469
-  position -0.9571870597233161 1.583357377094891 0.6536369601674729
+  orientation 0.16879907340561887 0.24618609267719072 -0.9544104361278445 1.1271861577398725
+  position -1.0334974094712879 1.9677276855408263 0.7500340051556985
 }
 TexturedBackground {
 }
@@ -27,15 +27,15 @@ TexturedBackgroundLight {
 Floor {
 }
 Robot {
-  translation 0.0009316871621673462 -0.00017131376172317063 0.289150280711101
-  rotation 0.0015693062209520305 -0.0001770318669225467 0.9999987529680741 2.9540910368854174
+  translation -0.009878549018939297 0.02038574313330772 0.28947242448089233
+  rotation 0.004949651276201862 -0.0007549448472520941 0.999987465426703 2.889205454167719
   children [
     InertialUnit {
       name "imu"
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 0.7849983859892046
+        position 0.4985831537145407
         axis 0 1 0
         anchor 0.2 0.1 0
         minStop -1.5
@@ -47,16 +47,16 @@ Robot {
         }
         RotationalMotor {
           name "motor_FL_hip"
-          maxTorque 50
+          maxTorque 100
         }
       ]
       endPoint Solid {
-        translation 0.12939130369033702 0.10001502745056146 -0.07066542794545136
-        rotation 1.1834422626346305e-05 0.999999999914163 -5.62320261336922e-06 0.7849972518953752
+        translation 0.15223177059948395 0.10001502745056146 -0.08773475344014872
+        rotation 1.9403921451389946e-05 0.9999999997936829 -6.010169338869144e-06 0.498582019658695
         children [
           HingeJoint {
             jointParameters HingeJointParameters {
-              position -1.5700053682205592
+              position -1.522583392178559
               axis 0 1 0
               anchor 0 0 -0.1
               minStop -2.5
@@ -67,12 +67,12 @@ Robot {
               }
               RotationalMotor {
                 name "motor_FL_knee"
-                maxTorque 50
+                maxTorque 100
               }
             ]
             endPoint Solid {
-              translation 0.0999999687191373 0 -0.10007909594208876
-              rotation 0 -1 0 1.5700053682205592
+              translation 0.0998837981540453 0 -0.10481942593245619
+              rotation 0 -0.9999999999999999 0 1.522583392178559
               children [
                 Shape {
                   appearance PBRAppearance {
@@ -94,6 +94,8 @@ Robot {
                 density -1
                 mass 0.5
               }
+              linearVelocity -0.0010518106676962906 0.0003724188255318615 0.0014609122294443654
+              angularVelocity -0.006597968001973183 -0.017484572526858935 0.00017757978098667139
             }
           }
           Shape {
@@ -119,11 +121,13 @@ Robot {
           density -1
           mass 1
         }
+        linearVelocity -0.0016464447246234896 0.000823634958536088 0.0031991655467275455
+        angularVelocity -0.0012050944430895543 0.00342653985151539 0.00018287278602818278
       }
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 0.7849985181167759
+        position 1.0221834356306134
         axis 0 1 0
         anchor -0.2 -0.1 0
         minStop -1.5
@@ -135,16 +139,16 @@ Robot {
         }
         RotationalMotor {
           name "motor_BR_hip"
-          maxTorque 50
+          maxTorque 100
         }
       ]
       endPoint Solid {
-        translation -0.2706257050386983 -0.10000001472150344 -0.07068214316598875
-        rotation 1.2084642913636931e-05 0.9999999999105824 -5.726825384273969e-06 0.7849975535373314
+        translation -0.2852564085354914 -0.10000001472150344 -0.052108544197472684
+        rotation 8.853715148192431e-06 0.9999999999453221 -5.564866634219668e-06 1.0221824710589629
         children [
           HingeJoint {
             jointParameters HingeJointParameters {
-              position -1.5700074074308987
+              position -1.522322365882863
               axis 0 1 0
               anchor 0 0 -0.1
               minStop -2.5
@@ -155,12 +159,12 @@ Robot {
               }
               RotationalMotor {
                 name "motor_BR_knee"
-                maxTorque 50
+                maxTorque 100
               }
             ]
             endPoint Solid {
-              translation 0.09999996888031357 0 -0.10007889192821613
-              rotation 0 -1 0 1.5700074074308987
+              translation 0.09988253675890263 0 -0.10484549797301482
+              rotation 0 -1 0 1.522322365882863
               children [
                 Shape {
                   appearance PBRAppearance {
@@ -182,6 +186,8 @@ Robot {
                 density -1
                 mass 0.5
               }
+              linearVelocity -0.0007759106660855264 0.00043126942276136695 0.0005099409187565145
+              angularVelocity -0.005480235856162922 -0.013123821606557066 0.0001786811684459046
             }
           }
           Shape {
@@ -205,11 +211,13 @@ Robot {
           density -1
           mass 1
         }
+        linearVelocity -0.0016488443584400279 0.0009574992450346474 0.0016060913371768021
+        angularVelocity -0.0007588620516456313 0.005173079667898567 0.00018217354878669604
       }
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 0.7849985172811768
+        position 1.0225897572969511
         axis 0 1 0
         anchor -0.2 0.1 0
         minStop -1.5
@@ -221,16 +229,16 @@ Robot {
         }
         RotationalMotor {
           name "motor_BL_hip"
-          maxTorque 50
+          maxTorque 100
         }
       ]
       endPoint Solid {
-        translation -0.2706115140764972 0.0999999899577868 -0.07066793718807723
-        rotation 1.1836165786386758e-05 0.9999999999141366 -5.624228335054519e-06 0.7849973811624996
+        translation -0.285260438514856 0.0999999899577868 -0.05206343141637725
+        rotation 8.666237348378649e-06 0.9999999999475307 -5.462132705995988e-06 1.0225886211623638
         children [
           HingeJoint {
             jointParameters HingeJointParameters {
-              position -1.570007403331361
+              position -1.5224276256505767
               axis 0 1 0
               anchor 0 0 -0.1
               minStop -2.5
@@ -241,12 +249,12 @@ Robot {
               }
               RotationalMotor {
                 name "motor_BL_knee"
-                maxTorque 50
+                maxTorque 100
               }
             ]
             endPoint Solid {
-              translation 0.0999999688799894 0 -0.10007889233816983
-              rotation 0 -1 0 1.5700074033313607
+              translation 0.09988304624156177 0 -0.10483498433357313
+              rotation 0 -1 0 1.5224276256505769
               children [
                 Shape {
                   appearance PBRAppearance {
@@ -268,6 +276,8 @@ Robot {
                 density -1
                 mass 0.5
               }
+              linearVelocity -0.0013783880748797946 0.0006450128181600836 0.0003791890412093285
+              angularVelocity -0.0047779014281760296 -0.010451199505806795 0.00017939321609494155
             }
           }
           Shape {
@@ -291,11 +301,13 @@ Robot {
           density -1
           mass 1
         }
+        linearVelocity -0.0018157824578049434 0.0010291526291328536 0.0016755827113758978
+        angularVelocity 0.00023688048675453148 0.009003058009453719 0.00018545774764677837
       }
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 0.7849983857505801
+        position 0.4985125926717406
         axis 0 1 0
         anchor 0.2 -0.1 0
         minStop -1.5
@@ -307,16 +319,16 @@ Robot {
         }
         RotationalMotor {
           name "motor_FR_hip"
-          maxTorque 50
+          maxTorque 100
         }
       ]
       endPoint Solid {
-        translation 0.1293837484495211 -0.10000002447426948 -0.07067271217610926
-        rotation 1.182136907485396e-05 0.9999999999143501 -5.617408326472467e-06 0.7849972437045581
+        translation 0.15223277244215 -0.10000002447426948 -0.08774724611521592
+        rotation 1.938550731879842e-05 0.9999999997940753 -6.0043146765838375e-06 0.4985114506636355
         children [
           HingeJoint {
             jointParameters HingeJointParameters {
-              position -1.5700053610990932
+              position -1.5223231116171585
               axis 0 1 0
               anchor 0 0 -0.1
               minStop -2.5
@@ -327,12 +339,12 @@ Robot {
               }
               RotationalMotor {
                 name "motor_FR_knee"
-                maxTorque 50
+                maxTorque 100
               }
             ]
             endPoint Solid {
-              translation 0.09999996871866498 0 -0.10007909656133285
-              rotation 0 -1 0 1.5700053610990932
+              translation 0.09988254037232869 0 -0.10484542348718029
+              rotation 0 -1 0 1.5223231116171585
               children [
                 Shape {
                   appearance PBRAppearance {
@@ -354,6 +366,8 @@ Robot {
                 density -1
                 mass 0.5
               }
+              linearVelocity -0.0010692523509702523 0.00037700574029187427 0.001289823718508035
+              angularVelocity -0.0061289775715618845 -0.015666149266478746 0.00017801729470789924
             }
           }
           Shape {
@@ -377,6 +391,8 @@ Robot {
           density -1
           mass 1
         }
+        linearVelocity -0.0016264609879048147 0.0008186039592243504 0.0028305468243705095
+        angularVelocity -0.0013951921750107777 0.002689358083564566 0.00018267747650465197
       }
     }
     Shape {
@@ -400,4 +416,6 @@ Robot {
     mass 5
   }
   controller "main_SMC_controller"
+  linearVelocity -0.0013649419972321726 0.0009597753250725761 0.0026776907986280213
+  angularVelocity -0.0013831851168335503 0.00273630451267363 0.00018271164143383875
 }
