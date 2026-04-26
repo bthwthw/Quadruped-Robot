@@ -5,10 +5,20 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/Floor.proto"
 
 WorldInfo {
+  basicTimeStep 2
+  contactProperties [
+    ContactProperties {
+      material1 "solid"
+      material2 "floor"
+      coulombFriction [
+        3
+      ]
+    }
+  ]
 }
 Viewpoint {
-  orientation 0.1129313983977947 -0.3569567642333036 -0.9272693070106486 5.489726442196275
-  position -1.5466886708077419 -1.4207682327587414 0.7497751095595657
+  orientation 0.1601688167277827 0.24453414353503292 -0.9563205544134299 1.074509905920469
+  position -0.9571870597233161 1.583357377094891 0.6536369601674729
 }
 TexturedBackground {
 }
@@ -28,6 +38,8 @@ Robot {
         position 0.7849983859892046
         axis 0 1 0
         anchor 0.2 0.1 0
+        minStop -1.5
+        maxStop 1.5
       }
       device [
         PositionSensor {
@@ -39,14 +51,15 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.12939130369033838 0.10001502745056146 -0.07066542794545005
-        rotation 1.1834525925842375e-05 0.9999999999141616 -5.623251696794295e-06 0.7849972518854774
+        translation 0.12939130369033702 0.10001502745056146 -0.07066542794545136
+        rotation 1.1834422626346305e-05 0.999999999914163 -5.62320261336922e-06 0.7849972518953752
         children [
           HingeJoint {
             jointParameters HingeJointParameters {
               position -1.5700053682205592
               axis 0 1 0
               anchor 0 0 -0.1
+              minStop -2.5
             }
             device [
               PositionSensor {
@@ -81,8 +94,6 @@ Robot {
                 density -1
                 mass 0.5
               }
-              linearVelocity 1.9094343078979786e-08 -3.645535604668369e-09 3.287433227683423e-07
-              angularVelocity 1.0088146674204986e-08 5.2805266484501576e-08 -4.1543821082287405e-12
             }
           }
           Shape {
@@ -108,8 +119,6 @@ Robot {
           density -1
           mass 1
         }
-        linearVelocity 1.941012455741746e-08 -3.7073951562605776e-09 1.0327322530656504e-07
-        angularVelocity 1.0150020319392927e-08 5.313449293201008e-08 -3.4647741351992686e-12
       }
     }
     HingeJoint {
@@ -117,6 +126,8 @@ Robot {
         position 0.7849985181167759
         axis 0 1 0
         anchor -0.2 -0.1 0
+        minStop -1.5
+        maxStop 1.5
       }
       device [
         PositionSensor {
@@ -128,14 +139,15 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation -0.27062570503869837 -0.10000001472150344 -0.07068214316598882
-        rotation 1.2084642913809712e-05 0.9999999999105824 -5.726825384355843e-06 0.784997553537333
+        translation -0.2706257050386983 -0.10000001472150344 -0.07068214316598875
+        rotation 1.2084642913636931e-05 0.9999999999105824 -5.726825384273969e-06 0.7849975535373314
         children [
           HingeJoint {
             jointParameters HingeJointParameters {
               position -1.5700074074308987
               axis 0 1 0
               anchor 0 0 -0.1
+              minStop -2.5
             }
             device [
               PositionSensor {
@@ -170,8 +182,6 @@ Robot {
                 density -1
                 mass 0.5
               }
-              linearVelocity -1.031498579408222e-08 1.958889406496214e-09 4.984819001379534e-07
-              angularVelocity 1.0760892093006793e-08 5.6303829622923945e-08 -6.135973326196658e-12
             }
           }
           Shape {
@@ -195,8 +205,6 @@ Robot {
           density -1
           mass 1
         }
-        linearVelocity 4.79485856619252e-09 -9.230699552495666e-10 1.7697231129433505e-07
-        angularVelocity 1.0580861760228125e-08 5.537072665391676e-08 -3.2958882172116823e-12
       }
     }
     HingeJoint {
@@ -204,6 +212,8 @@ Robot {
         position 0.7849985172811768
         axis 0 1 0
         anchor -0.2 0.1 0
+        minStop -1.5
+        maxStop 1.5
       }
       device [
         PositionSensor {
@@ -215,14 +225,15 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation -0.27061151407649864 0.0999999899577868 -0.07066793718807907
-        rotation 1.1836165786401234e-05 0.9999999999141366 -5.624228335061395e-06 0.7849973811624996
+        translation -0.2706115140764972 0.0999999899577868 -0.07066793718807723
+        rotation 1.1836165786386758e-05 0.9999999999141366 -5.624228335054519e-06 0.7849973811624996
         children [
           HingeJoint {
             jointParameters HingeJointParameters {
               position -1.570007403331361
               axis 0 1 0
               anchor 0 0 -0.1
+              minStop -2.5
             }
             device [
               PositionSensor {
@@ -234,7 +245,7 @@ Robot {
               }
             ]
             endPoint Solid {
-              translation 0.09999996887998937 0 -0.10007889233816983
+              translation 0.0999999688799894 0 -0.10007889233816983
               rotation 0 -1 0 1.5700074033313607
               children [
                 Shape {
@@ -257,8 +268,6 @@ Robot {
                 density -1
                 mass 0.5
               }
-              linearVelocity -1.0272749170855783e-08 1.950921988874704e-09 4.980792099899818e-07
-              angularVelocity 1.0759979412032164e-08 5.629876464562529e-08 -6.132730751964002e-12
             }
           }
           Shape {
@@ -282,8 +291,6 @@ Robot {
           density -1
           mass 1
         }
-        linearVelocity 4.815595197716059e-09 -9.269840366696704e-10 1.767647561905447e-07
-        angularVelocity 1.0580253497466803e-08 5.536747726184709e-08 -3.2977915193146276e-12
       }
     }
     HingeJoint {
@@ -291,6 +298,8 @@ Robot {
         position 0.7849983857505801
         axis 0 1 0
         anchor 0.2 -0.1 0
+        minStop -1.5
+        maxStop 1.5
       }
       device [
         PositionSensor {
@@ -302,14 +311,15 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.12938374844952105 -0.10000002447426948 -0.07067271217610933
-        rotation 1.1821369074824446e-05 0.9999999999143501 -5.6174083264584444e-06 0.7849972437045576
+        translation 0.1293837484495211 -0.10000002447426948 -0.07067271217610926
+        rotation 1.182136907485396e-05 0.9999999999143501 -5.617408326472467e-06 0.7849972437045581
         children [
           HingeJoint {
             jointParameters HingeJointParameters {
               position -1.5700053610990932
               axis 0 1 0
               anchor 0 0 -0.1
+              minStop -2.5
             }
             device [
               PositionSensor {
@@ -344,8 +354,6 @@ Robot {
                 density -1
                 mass 0.5
               }
-              linearVelocity 1.9207383648508876e-08 -3.65087181462834e-09 3.2809246744139985e-07
-              angularVelocity 1.0090398178730683e-08 5.279128788552535e-08 -5.176799834359625e-12
             }
           }
           Shape {
@@ -369,8 +377,6 @@ Robot {
           density -1
           mass 1
         }
-        linearVelocity 1.946654767948084e-08 -3.7102564676152356e-09 1.029549652002988e-07
-        angularVelocity 1.0152102255211543e-08 5.3125397882951596e-08 -3.493150174144843e-12
       }
     }
     Shape {
@@ -393,7 +399,5 @@ Robot {
     density -1
     mass 5
   }
-  controller "<none>"
-  linearVelocity 1.596611722013515e-08 -3.0512499593834564e-09 -7.926484729523232e-09
-  angularVelocity 1.0348231192889763e-08 5.417526836075925e-08 -2.858375965928601e-12
+  controller "main_SMC_controller"
 }
