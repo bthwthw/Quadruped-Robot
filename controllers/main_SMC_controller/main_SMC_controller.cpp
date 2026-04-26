@@ -12,8 +12,8 @@ using namespace webots;
 
 // --- HÀM TÍNH ĐỘNG HỌC NGHỊCH (GIẢI BẰNG HÀM COSIN) ---
 void calculate_Leg_IK(double t_total, double offset, double* q_ref_pair) {
-    double T = 0.8;       // chu kỳ      
-    double S = 0.14;      // sải chân 
+    double T = 0.5;       // chu kỳ      
+    double S = 0.08;      // sải chân 
     double H = 0.03;      // nhấc chân 
     double y0 = -0.23;          
     double L1 = 0.2;           
@@ -28,10 +28,10 @@ void calculate_Leg_IK(double t_total, double offset, double* q_ref_pair) {
 
     // Quỹ đạo Elip thuần
     if (theta_mod < M_PI) {
-        x = -(S / 2.0) * cos(theta_mod); 
+        x = (S / 2.0) * cos(theta_mod); 
         y = y0 + H * sin(theta_mod);           
     } else {
-        x = (S / 2.0) * cos(theta_mod - M_PI);  
+        x = -(S / 2.0) * cos(theta_mod - M_PI);  
         y = y0;                            
     }
 
