@@ -8,10 +8,10 @@ public:
     double T, S, H, y0, L1, L2;
 
     GaitPlanner() {
-        T = 0.5;      // Chu kỳ
+        T = 1.0;      // Chu kỳ
         S = 0.08;     // Sải chân
-        H = 0.03;     // Nhấc chân
-        y0 = -0.23;   // Chiều cao thân
+        H = 0.01;     // Nhấc chân
+        y0 = -0.25;   // Chiều cao thân
         L1 = 0.2;     // Đùi
         L2 = 0.2;     // Cẳng
     }

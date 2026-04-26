@@ -30,7 +30,7 @@ int main(int argc, char **argv) {
     double alpha_filter = 0.15;
     bool first_step = true;
 
-    planner.get_Trot(0.0, q_ref);
+    planner.get_Pace(0.0, q_ref);
     double start_time = robot->getTime();
 
     while (robot->step(timeStep) != -1) {
@@ -39,10 +39,10 @@ int main(int argc, char **argv) {
         for (int i=0; i<8; i++) q_ref_prev[i] = q_ref[i];
         
         // 1. TÍNH TOÁN QUỸ ĐẠO BẰNG PLANNER
-        if (t_elapsed < 2.0) {
-            planner.get_Trot(0.0, q_ref); 
+        if (t_elapsed < 0.5) {
+            planner.get_Pace(0.0, q_ref);
         } else {
-            planner.get_Trot(t_elapsed - 2.0, q_ref); 
+            planner.get_Pace(t_elapsed - 2.0, q_ref); 
         }
 
         // 2. ĐỌC CẢM BIẾN & LỌC NHIỄU
