@@ -66,7 +66,6 @@
 ###-----------------------------------------------------------------------------
 
 CXX_SOURCES = main_SMC_controller.cpp
-C_SOURCES = SMC_controller.c SMC_controller_initialize.c
 
 ### Do not modify: this includes Webots global Makefile.include
 null :=
