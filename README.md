@@ -16,25 +16,34 @@ To maintain a clean and modular environment, the project is organized as follows
 ## 🎮 Interactive Controls & Gaits
 During the Webots simulation, you can dynamically switch between different locomotion gaits and control strategies in real-time using the keyboard.
 *(Note: Ensure you click inside the Webots 3D viewport to make it active before pressing the keys).*
+
 **Default Initialization:** The system starts with Model-Based SMC and the Trot Gait.
 
 **Control Strategies:** Toggle between Model-Free SMC (press "1") and Model-Based SMC (press "2").
 
 **Gaits:** Switch between various gaits such as: 
 * **`T` - Trot:** A diagonal gait where diagonal pairs of legs (e.g., Front-Left and Back-Right) move simultaneously.
+
 https://github.com/user-attachments/assets/11ef0175-4e76-4521-b26d-f165402c2548
+
 https://github.com/user-attachments/assets/3212cb97-ae6e-4037-bb9d-5528dcd3ab7a
 
 * **`W` - Walk:** A slow, highly stable gait where at least 3 feet are always in contact with the ground at any given time.
+
 https://github.com/user-attachments/assets/2ed65e74-6ee4-410b-a1dc-4054953d198b
+
 https://github.com/user-attachments/assets/05c444c5-f205-43e9-95da-8df98727b470
 
 * **`P` - Pace:** A lateral gait where the two left legs move together, alternating with the two right legs.
+
 https://github.com/user-attachments/assets/e3df521c-f3b8-42ec-be1b-5afc5914cc1c
+
 https://github.com/user-attachments/assets/648aef62-23cb-477a-8a12-98e8a53e89d6
 
 * **`B` - Bound:** A leaping gait where the two front legs move together, followed by the two hind legs.
+
 https://github.com/user-attachments/assets/d4465eb6-d4db-46ad-965c-e6abe183f684
+
 https://github.com/user-attachments/assets/3d16f8f0-690b-40d1-af11-016b4956cf01
 
 ## 🛠 Development Guidelines
