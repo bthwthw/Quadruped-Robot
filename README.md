@@ -24,9 +24,8 @@ During the Webots simulation, you can dynamically switch between different locom
 **Gaits:** Switch between various gaits such as: 
 * **`T` - Trot:** A diagonal gait where diagonal pairs of legs (e.g., Front-Left and Back-Right) move simultaneously.
 
-https://github.com/user-attachments/assets/11ef0175-4e76-4521-b26d-f165402c2548
+| https://github.com/user-attachments/assets/11ef0175-4e76-4521-b26d-f165402c2548 | https://github.com/user-attachments/assets/3212cb97-ae6e-4037-bb9d-5528dcd3ab7a
 
-https://github.com/user-attachments/assets/3212cb97-ae6e-4037-bb9d-5528dcd3ab7a
 
 * **`W` - Walk:** A slow, highly stable gait where at least 3 feet are always in contact with the ground at any given time.
 
