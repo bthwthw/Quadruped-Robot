@@ -40,11 +40,23 @@ int main(int argc, char **argv) {
     char prev_gait = 'T';      
     int current_controller = 2; 
     int prev_controller = 2;    
+    
+    double internal_gait_time = 0.0;
+    double speed_factor = 1.0;   
+    int direction = 1;            
+    int prev_display_speed = 100;
+    int prev_direction = 1;
+    int prev_key = -1;
 
     planner.get_Trot(0.0, q_ref);
     double start_time = robot->getTime();
 
     std::cout << "RUNNING: Model-based SMC and Trot gait" << std::endl;
+    std::cout << "===========================================" << std::endl;
+    std::cout << "CHANGE GAIT: key T (Trot), B (Bound), P (Pace), W (Walk)" << std::endl;
+    std::cout << "CHANGE SMC Controller: key 1 (Model-free), 2 (Model-based)" << std::endl;
+    std::cout << "Speed: Key Up (Increase), Down (Decrease)" << std::endl;
+    std::cout << "Direction: Key Right (Forward), Left (Backward)" << std::endl;
 
     while (robot->step(timeStep) != -1) {
         double t_elapsed = robot->getTime() - start_time;
@@ -54,8 +66,22 @@ int main(int argc, char **argv) {
         else if (key == 'B' || key == 'b') current_gait = 'B';
         else if (key == 'P' || key == 'p') current_gait = 'P';
         else if (key == 'W' || key == 'w') current_gait = 'W';
+        
         else if (key == '1') current_controller = 1; 
         else if (key == '2') current_controller = 2; 
+        
+        else if (key == Keyboard::UP && key != prev_key) {
+          speed_factor += 0.1; 
+          if (speed_factor > 3.0) speed_factor = 3.0; // Max speed 300%
+        }
+        else if (key == Keyboard::DOWN && key != prev_key) {
+          speed_factor -= 0.1;
+          if (speed_factor < 0.2) speed_factor = 0.2; // Min speed 20%
+        }
+        else if (key == Keyboard::RIGHT && key != prev_key) direction = 1;
+        else if (key == Keyboard::LEFT && key != prev_key) direction = -1;
+        prev_key = key;
+        
         // =========================================================
 
         // Log 
@@ -78,19 +104,33 @@ int main(int argc, char **argv) {
             }
             prev_gait = current_gait;
         }
+        
+        int current_display_speed = (int)(speed_factor * 100 + 0.5);
+        if (current_display_speed != prev_display_speed) {
+            std::cout << ">> [Speed] " << current_display_speed << "%" << std::endl;
+            prev_display_speed = current_display_speed;
+        }
+        
+        if (direction != prev_direction) {
+            if (direction == 1) std::cout << ">> [Direction] Forward >>>" << std::endl;
+            else std::cout << ">> [Direction] <<< Backward" << std::endl;
+            prev_direction = direction;
+        }
         // =========================================================
 
         // gait planner 
         for (int i=0; i<8; i++) q_ref_prev[i] = q_ref[i];     
         
-        double gait_time = (t_elapsed < 1.5) ? 0.0 : (t_elapsed - 1.5); 
+        if (t_elapsed >= 1.5) { 
+            internal_gait_time += dt * speed_factor * direction; 
+        }
         
         switch (current_gait) {
-            case 'T': planner.get_Trot(gait_time, q_ref); break;
-            case 'B': planner.get_Bound(gait_time, q_ref); break;
-            case 'P': planner.get_Pace(gait_time, q_ref); break;
-            case 'W': planner.get_Walk(gait_time, q_ref); break;
-            default:  planner.get_Trot(gait_time, q_ref); break;
+            case 'T': planner.get_Trot(internal_gait_time, q_ref); break;
+            case 'B': planner.get_Bound(internal_gait_time, q_ref); break;
+            case 'P': planner.get_Pace(internal_gait_time, q_ref); break;
+            case 'W': planner.get_Walk(internal_gait_time, q_ref); break;
+            default:  planner.get_Trot(internal_gait_time, q_ref); break;
         }
         // =========================================================
 
