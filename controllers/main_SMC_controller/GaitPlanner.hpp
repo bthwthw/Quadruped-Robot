@@ -50,8 +50,9 @@ public:
         q_ref_pair[0] = (alpha - beta) + M_PI / 2.0; 
         q_ref_pair[1] = q2;        
     }
-
-
+    // =========================================================
+    
+    // gait planner 
     void get_Trot(double t, double* q_ref) {
         calculate_Leg_IK(t, 0.0, &q_ref[0]); // FL
         calculate_Leg_IK(t, 0.5, &q_ref[2]); // FR
@@ -74,10 +75,10 @@ public:
     }
     
     void get_Walk(double t, double* q_ref) {
-        calculate_Leg_IK(t, 0.00, &q_ref[0]); // FL (Nhấc đầu tiên)
-        calculate_Leg_IK(t, 0.50, &q_ref[2]); // FR (Nhấc thứ 3)
-        calculate_Leg_IK(t, 0.25, &q_ref[4]); // BR (Nhấc thứ 2)
-        calculate_Leg_IK(t, 0.75, &q_ref[6]); // BL (Nhấc cuối cùng)
+        calculate_Leg_IK(t, 0.00, &q_ref[0]); // FL 
+        calculate_Leg_IK(t, 0.50, &q_ref[2]); // FR
+        calculate_Leg_IK(t, 0.25, &q_ref[4]); // BR 
+        calculate_Leg_IK(t, 0.75, &q_ref[6]); // BL
     }
 };
 
