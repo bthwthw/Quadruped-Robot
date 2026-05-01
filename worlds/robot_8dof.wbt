@@ -17,8 +17,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation 0.21733554777997066 0.2496963496701552 -0.9436190929779767 1.401318338654304
-  position -1.788479604008232 3.275590434023513 1.4215824237413568
+  orientation 0.1950024508843732 -0.14902241504471098 -0.9694154754094497 4.325685269484337
+  position 3.777068802779845 -8.817626610642375 4.137103978858347
 }
 TexturedBackground {
 }
@@ -27,15 +27,14 @@ TexturedBackgroundLight {
 Floor {
 }
 Robot {
-  translation -0.009878549018939297 0.02038574313330772 0.28947242448089233
-  rotation 0.004949651276201862 -0.0007549448472520941 0.999987465426703 2.889205454167719
+  translation -4 0 0.289472
   children [
     InertialUnit {
       name "imu"
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 0.4985831537145407
+        position 1.0480470059528115
         axis 0 1 0
         anchor 0.2 0.1 0
         minStop -1.5
@@ -51,12 +50,12 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.1522317705994842 0.10001502745056146 -0.0877347534401482
-        rotation 1.9403074568940382e-05 0.999999999793701 -6.009907025555596e-06 0.4985820197081742
+        translation 0.11344530561699077 0.10001502745056146 -0.04987459856006508
+        rotation 8.40440628500831e-06 0.9999999999498446 -5.447634839729882e-06 1.0480458718912549
         children [
           HingeJoint {
             jointParameters HingeJointParameters {
-              position -1.522583392178559
+              position -1.7846711134921627
               axis 0 1 0
               anchor 0 0 -0.1
               minStop -2.5
@@ -71,8 +70,8 @@ Robot {
               }
             ]
             endPoint Solid {
-              translation 0.0998837981540453 0 -0.10481942593245619
-              rotation 0 -0.9999999999999999 0 1.522583392178559
+              translation 0.0977215837240373 0 -0.07877520142704629
+              rotation 0 -1 0 1.7846711134921627
               children [
                 Shape {
                   appearance PBRAppearance {
@@ -123,7 +122,7 @@ Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 1.0221834356306134
+        position 1.0502766846069578
         axis 0 1 0
         anchor -0.2 -0.1 0
         minStop -1.5
@@ -139,12 +138,12 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation -0.2852564085354914 -0.10000001472150344 -0.052108544197472656
-        rotation 8.853715148201564e-06 0.9999999999453221 -5.564866634225424e-06 1.0221824710589629
+        translation -0.28668647301791983 -0.10000001472150344 -0.049693168247396176
+        rotation 8.561091612953971e-06 0.9999999999479513 -5.55020981564758e-06 1.0502757200338084
         children [
           HingeJoint {
             jointParameters HingeJointParameters {
-              position -1.522322365882863
+              position -1.788807905086149
               axis 0 1 0
               anchor 0 0 -0.1
               minStop -2.5
@@ -159,8 +158,8 @@ Robot {
               }
             ]
             endPoint Solid {
-              translation 0.09988253675890324 0 -0.10484549797301482
-              rotation 0 -1 0 1.522322365882863
+              translation 0.09763294523034685 0 -0.07837113027344389
+              rotation 0 -0.9999999999999999 0 1.788807905086149
               children [
                 Shape {
                   appearance PBRAppearance {
@@ -209,7 +208,7 @@ Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 1.0225897572969511
+        position 0.7295018194275887
         axis 0 1 0
         anchor -0.2 0.1 0
         minStop -1.5
@@ -225,12 +224,12 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation -0.285260438514856 0.0999999899577868 -0.05206343141637724
-        rotation 8.66623734835676e-06 0.9999999999475307 -5.462132705982172e-06 1.0225886211623638
+        translation -0.2665829800298295 0.0999999899577868 -0.07447583525507236
+        rotation 1.285407880410347e-05 0.9999999999012763 -5.67627974696685e-06 0.7295006833140201
         children [
           HingeJoint {
             jointParameters HingeJointParameters {
-              position -1.5224276256505767
+              position -1.7889678020114004
               axis 0 1 0
               anchor 0 0 -0.1
               minStop -2.5
@@ -245,8 +244,8 @@ Robot {
               }
             ]
             endPoint Solid {
-              translation 0.09988304624156116 0 -0.10483498433357313
-              rotation 0 -1 0 1.5224276256505769
+              translation 0.09762948559250052 0 -0.07835551934225854
+              rotation 0 -0.9999999999999999 0 1.7889678020114006
               children [
                 Shape {
                   appearance PBRAppearance {
@@ -295,7 +294,7 @@ Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 0.4985125926717406
+        position 0.7316855138223484
         axis 0 1 0
         anchor 0.2 -0.1 0
         minStop -1.5
@@ -311,12 +310,12 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.15223277244215033 -0.10000002447426948 -0.08774724611521537
-        rotation 1.938550731885755e-05 0.9999999997940753 -6.004314676602153e-06 0.4985114506636355
+        translation 0.1332500603145892 -0.10000002447426948 -0.0743352727940205
+        rotation 1.2795235749205688e-05 0.9999999999020823 -5.667221694327559e-06 0.7316843717812086
         children [
           HingeJoint {
             jointParameters HingeJointParameters {
-              position -1.5223231116171585
+              position -1.7940988830046642
               axis 0 1 0
               anchor 0 0 -0.1
               minStop -2.5
@@ -331,8 +330,8 @@ Robot {
               }
             ]
             endPoint Solid {
-              translation 0.09988254037232869 0 -0.10484542348718029
-              rotation 0 -1 0 1.5223231116171585
+              translation 0.09751714130517314 0 -0.07785486166972791
+              rotation 0 -1 0 1.7940988830046642
               children [
                 Shape {
                   appearance PBRAppearance {
