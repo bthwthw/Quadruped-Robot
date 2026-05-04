@@ -1,0 +1,10 @@
+<library path="quadruped_smc_ros2">
+  <class
+    type="quadruped_smc_ros2::QuadrupedDriver"
+    base_class_type="webots_ros2_driver::PluginInterface">
+    <description>
+      SMC controller plugin cho quadruped robot 8-DOF.
+      Tích hợp GaitPlanner (Trot/Bound/Pace/Walk) và LegController (SMC + bù trọng lực).
+    </description>
+  </class>
+</library>
