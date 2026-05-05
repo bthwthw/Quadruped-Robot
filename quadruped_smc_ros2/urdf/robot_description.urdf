@@ -1,0 +1,275 @@
+<?xml version="1.0"?>
+<robot name="quadruped" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- ==================== MATERIALS ==================== -->
+  <material name="blue">
+    <color rgba="0 0 0.5 1"/>
+  </material>
+  <material name="red">
+    <color rgba="1 0 0 1"/>
+  </material>
+
+  <!-- ==================== LINKS ==================== -->
+
+  <!-- Base link (body) -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.4 0.2 0.1"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.4 0.2 0.1"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="5.0"/>
+      <inertia ixx="0.02" ixy="0" ixz="0" iyy="0.02" iyz="0" izz="0.02"/>
+    </inertial>
+  </link>
+
+  <!-- ========== CHÂN TRƯỚC TRÁI (FL) ========== -->
+  <link name="FL_hip_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.2" radius="0.02"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.2" radius="0.02"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+    </inertial>
+  </link>
+
+  <link name="FL_knee_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.2" radius="0.015"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.2" radius="0.015"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.5"/>
+      <inertia ixx="0.0005" ixy="0" ixz="0" iyy="0.0005" iyz="0" izz="0.0005"/>
+    </inertial>
+  </link>
+
+  <joint name="FL_hip_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="FL_hip_link"/>
+    <origin xyz="0.2 0.1 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.5" upper="1.5" effort="100" velocity="10"/>
+  </joint>
+
+  <joint name="FL_knee_joint" type="revolute">
+    <parent link="FL_hip_link"/>
+    <child link="FL_knee_link"/>
+    <origin xyz="0 0 -0.1"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.5" upper="0" effort="100" velocity="10"/>
+  </joint>
+
+  <!-- ========== CHÂN TRƯỚC PHẢI (FR) ========== -->
+  <link name="FR_hip_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.2" radius="0.02"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.2" radius="0.02"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+    </inertial>
+  </link>
+
+  <link name="FR_knee_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.2" radius="0.015"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.2" radius="0.015"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.5"/>
+      <inertia ixx="0.0005" ixy="0" ixz="0" iyy="0.0005" iyz="0" izz="0.0005"/>
+    </inertial>
+  </link>
+
+  <joint name="FR_hip_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="FR_hip_link"/>
+    <origin xyz="0.2 -0.1 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.5" upper="1.5" effort="100" velocity="10"/>
+  </joint>
+
+  <joint name="FR_knee_joint" type="revolute">
+    <parent link="FR_hip_link"/>
+    <child link="FR_knee_link"/>
+    <origin xyz="0 0 -0.1"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.5" upper="0" effort="100" velocity="10"/>
+  </joint>
+
+  <!-- ========== CHÂN SAU TRÁI (BL) ========== -->
+  <link name="BL_hip_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.2" radius="0.02"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.2" radius="0.02"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+    </inertial>
+  </link>
+
+  <link name="BL_knee_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.2" radius="0.015"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.2" radius="0.015"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.5"/>
+      <inertia ixx="0.0005" ixy="0" ixz="0" iyy="0.0005" iyz="0" izz="0.0005"/>
+    </inertial>
+  </link>
+
+  <joint name="BL_hip_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="BL_hip_link"/>
+    <origin xyz="-0.2 0.1 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.5" upper="1.5" effort="100" velocity="10"/>
+  </joint>
+
+  <joint name="BL_knee_joint" type="revolute">
+    <parent link="BL_hip_link"/>
+    <child link="BL_knee_link"/>
+    <origin xyz="0 0 -0.1"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.5" upper="0" effort="100" velocity="10"/>
+  </joint>
+
+  <!-- ========== CHÂN SAU PHẢI (BR) ========== -->
+  <link name="BR_hip_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.2" radius="0.02"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.2" radius="0.02"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+    </inertial>
+  </link>
+
+  <link name="BR_knee_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.2" radius="0.015"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.2" radius="0.015"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.5"/>
+      <inertia ixx="0.0005" ixy="0" ixz="0" iyy="0.0005" iyz="0" izz="0.0005"/>
+    </inertial>
+  </link>
+
+  <joint name="BR_hip_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="BR_hip_link"/>
+    <origin xyz="-0.2 -0.1 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.5" upper="1.5" effort="100" velocity="10"/>
+  </joint>
+
+  <joint name="BR_knee_joint" type="revolute">
+    <parent link="BR_hip_link"/>
+    <child link="BR_knee_link"/>
+    <origin xyz="0 0 -0.1"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.5" upper="0" effort="100" velocity="10"/>
+  </joint>
+
+  <!-- ==================== WEBOTS ROS2 DRIVER MAPPING ==================== -->
+  <webots:robot xmlns:webots="http://www.cyberbotics.com/ros2">
+    <!-- Motors -->
+    <webots:device reference="motor_FL_hip"  type="Motor"/>
+    <webots:device reference="motor_FL_knee" type="Motor"/>
+    <webots:device reference="motor_FR_hip"  type="Motor"/>
+    <webots:device reference="motor_FR_knee" type="Motor"/>
+    <webots:device reference="motor_BL_hip"  type="Motor"/>
+    <webots:device reference="motor_BL_knee" type="Motor"/>
+    <webots:device reference="motor_BR_hip"  type="Motor"/>
+    <webots:device reference="motor_BR_knee" type="Motor"/>
+
+    <!-- Position sensors -->
+    <webots:device reference="sensor_FL_hip"  type="PositionSensor"/>
+    <webots:device reference="sensor_FL_knee" type="PositionSensor"/>
+    <webots:device reference="sensor_FR_hip"  type="PositionSensor"/>
+    <webots:device reference="sensor_FR_knee" type="PositionSensor"/>
+    <webots:device reference="sensor_BL_hip"  type="PositionSensor"/>
+    <webots:device reference="sensor_BL_knee" type="PositionSensor"/>
+    <webots:device reference="sensor_BR_hip"  type="PositionSensor"/>
+    <webots:device reference="sensor_BR_knee" type="PositionSensor"/>
+
+    <!-- IMU -->
+    <webots:device reference="imu" type="InertialUnit"/>
+  </webots:robot>
+
+  <webots>
+  <plugin type="quadruped_smc_ros2::QuadrupedDriver"/>
+  </webots>
+
+</robot>
