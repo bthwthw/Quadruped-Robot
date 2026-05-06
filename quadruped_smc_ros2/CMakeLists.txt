@@ -15,18 +15,10 @@ find_package(geometry_msgs      REQUIRED)
 find_package(pluginlib          REQUIRED)
 find_package(webots_ros2_driver REQUIRED)
 
-#── 1. Plugin shared library ──────────────────────────────────
+# ── 1. Plugin shared library ──────────────────────────────────
 add_library(${PROJECT_NAME} SHARED
     src/quadruped_driver.cpp
 )
-
-# # C source biên dịch như C
-# set_source_files_properties(
-#     src/SMC_controller.c
-#     src/SMC_controller_initialize.c
-#     src/SMC_controller_terminate.c
-#     PROPERTIES LANGUAGE C
-# )
 
 target_include_directories(${PROJECT_NAME} PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -42,7 +34,6 @@ ament_target_dependencies(${PROJECT_NAME}
     webots_ros2_driver
 )
 
-# Link math library
 target_link_libraries(${PROJECT_NAME} m)
 
 pluginlib_export_plugin_description_file(webots_ros2_driver plugin.xml)
@@ -51,13 +42,17 @@ pluginlib_export_plugin_description_file(webots_ros2_driver plugin.xml)
 add_executable(gait_keyboard_node src/gait_keyboard_node.cpp)
 ament_target_dependencies(gait_keyboard_node rclcpp std_msgs)
 
+# ── 3. Error monitor node ─────────────────────────────────────
+add_executable(error_monitor_node src/error_monitor_node.cpp)
+ament_target_dependencies(error_monitor_node rclcpp std_msgs sensor_msgs)
+
 # ── Install ───────────────────────────────────────────────────
 install(TARGETS ${PROJECT_NAME}
     ARCHIVE DESTINATION lib
     LIBRARY DESTINATION lib
     RUNTIME DESTINATION bin
 )
-install(TARGETS gait_keyboard_node
+install(TARGETS gait_keyboard_node error_monitor_node
     DESTINATION lib/${PROJECT_NAME}
 )
 install(DIRECTORY include/

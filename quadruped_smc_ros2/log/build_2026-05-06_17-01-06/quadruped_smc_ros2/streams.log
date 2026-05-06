@@ -1,0 +1,85 @@
+[0.013s] Invoking command in '/home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2 -- -j16 -l16
+[0.082s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.278s] -- Found rclcpp: 28.1.11 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.318s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.328s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.343s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.358s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.427s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.429s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.500s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.575s] -- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+[0.591s] -- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[0.631s] -- Found pluginlib: 5.4.2 (/opt/ros/jazzy/share/pluginlib/cmake)
+[0.637s] -- Found webots_ros2_driver: 2025.0.0 (/opt/ros/jazzy/share/webots_ros2_driver/cmake)
+[0.647s] -- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)
+[0.648s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[0.838s] -- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[0.921s] -- Added test 'copyright' to check source files copyright and LICENSE
+[0.946s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.946s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/tracy/Quadruped-Robot/quadruped_smc_ros2/include>
+[0.946s] -- Configured cppcheck exclude dirs and/or files: 
+[0.964s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[0.964s] -- Configured cpplint exclude dirs and/or files: 
+[0.967s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.967s] -- Configured 'flake8' exclude dirs and/or files: 
+[0.972s] -- Added test 'lint_cmake' to check CMake code style
+[0.975s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.992s] -- Added test 'uncrustify' to check C / C++ code style
+[0.992s] -- Configured uncrustify additional arguments: 
+[0.995s] -- Added test 'xmllint' to check XML markup files
+[0.996s] -- Configuring done (0.9s)
+[1.074s] -- Generating done (0.1s)
+[1.081s] -- Build files have been written to: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2
+[1.123s] [ 16%] [32mBuilding CXX object CMakeFiles/error_monitor_node.dir/src/error_monitor_node.cpp.o[0m
+[1.133s] [ 33%] [32mBuilding CXX object CMakeFiles/gait_keyboard_node.dir/src/gait_keyboard_node.cpp.o[0m
+[1.134s] [ 50%] [32mBuilding CXX object CMakeFiles/quadruped_smc_ros2.dir/src/quadruped_driver.cpp.o[0m
+[43.007s] [ 66%] [32m[1mLinking CXX executable gait_keyboard_node[0m
+[43.253s] [ 66%] Built target gait_keyboard_node
+[48.579s] [ 83%] [32m[1mLinking CXX executable error_monitor_node[0m
+[48.734s] [ 83%] Built target error_monitor_node
+[48.749s] [100%] [32m[1mLinking CXX shared library libquadruped_smc_ros2.so[0m
+[48.979s] [100%] Built target quadruped_smc_ros2
+[48.994s] Invoked command in '/home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2 -- -j16 -l16
+[49.006s] Invoking command in '/home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2
+[49.028s] -- Install configuration: ""
+[49.028s] -- Installing: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2/plugin.xml
+[49.028s] -- Installing: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/lib/libquadruped_smc_ros2.so
+[49.028s] -- Set non-toolchain portion of runtime path of "/home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/lib/libquadruped_smc_ros2.so" to ""
+[49.028s] -- Installing: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/lib/quadruped_smc_ros2/gait_keyboard_node
+[49.028s] -- Set non-toolchain portion of runtime path of "/home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/lib/quadruped_smc_ros2/gait_keyboard_node" to ""
+[49.028s] -- Installing: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/lib/quadruped_smc_ros2/error_monitor_node
+[49.029s] -- Set non-toolchain portion of runtime path of "/home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/lib/quadruped_smc_ros2/error_monitor_node" to ""
+[49.029s] -- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/include
+[49.029s] -- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/include/quadruped_smc_ros2
+[49.029s] -- Installing: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/include/quadruped_smc_ros2/LegController2.hpp
+[49.029s] -- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/include/quadruped_smc_ros2/quadruped_driver.hpp
+[49.029s] -- Installing: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/include/quadruped_smc_ros2/GaitPlanner.hpp
+[49.029s] -- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2//launch
+[49.029s] -- Installing: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2//launch/robot_launch.py
+[49.029s] -- Installing: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2//launch/sequence_launch.py
+[49.029s] -- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2//config
+[49.029s] -- Installing: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2//config/smc_params.yaml
+[49.029s] -- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2//urdf
+[49.029s] -- Installing: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2//urdf/robot_description.urdf
+[49.029s] -- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2//resource
+[49.029s] -- Installing: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2//resource/robot_8dof.wbt
+[49.030s] -- Installing: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2//resource/.robot_8dof.wbproj
+[49.030s] -- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2/plugin.xml
+[49.030s] -- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/ament_index/resource_index/package_run_dependencies/quadruped_smc_ros2
+[49.030s] -- Installing: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/ament_index/resource_index/parent_prefix_path/quadruped_smc_ros2
+[49.030s] -- Installing: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2/environment/ament_prefix_path.sh
+[49.030s] -- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2/environment/ament_prefix_path.dsv
+[49.030s] -- Installing: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2/environment/path.sh
+[49.030s] -- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2/environment/path.dsv
+[49.030s] -- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2/local_setup.bash
+[49.030s] -- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2/local_setup.sh
+[49.030s] -- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2/local_setup.zsh
+[49.030s] -- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2/local_setup.dsv
+[49.030s] -- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2/package.dsv
+[49.030s] -- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/ament_index/resource_index/packages/quadruped_smc_ros2
+[49.030s] -- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/ament_index/resource_index/webots_ros2_driver__pluginlib__plugin/quadruped_smc_ros2
+[49.030s] -- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2/cmake/quadruped_smc_ros2Config.cmake
+[49.030s] -- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2/cmake/quadruped_smc_ros2Config-version.cmake
+[49.031s] -- Installing: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2/package.xml
+[49.032s] Invoked command in '/home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2

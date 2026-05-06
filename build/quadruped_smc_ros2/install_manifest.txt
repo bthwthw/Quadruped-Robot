@@ -1,13 +1,10 @@
 /home/tracy/Quadruped-Robot/install/quadruped_smc_ros2/share/quadruped_smc_ros2/plugin.xml
 /home/tracy/Quadruped-Robot/install/quadruped_smc_ros2/lib/libquadruped_smc_ros2.so
 /home/tracy/Quadruped-Robot/install/quadruped_smc_ros2/lib/quadruped_smc_ros2/gait_keyboard_node
-/home/tracy/Quadruped-Robot/install/quadruped_smc_ros2/include/quadruped_smc_ros2/rtwtypes.h
-/home/tracy/Quadruped-Robot/install/quadruped_smc_ros2/include/quadruped_smc_ros2/SMC_controller.h
+/home/tracy/Quadruped-Robot/install/quadruped_smc_ros2/lib/quadruped_smc_ros2/error_monitor_node
 /home/tracy/Quadruped-Robot/install/quadruped_smc_ros2/include/quadruped_smc_ros2/LegController2.hpp
 /home/tracy/Quadruped-Robot/install/quadruped_smc_ros2/include/quadruped_smc_ros2/quadruped_driver.hpp
 /home/tracy/Quadruped-Robot/install/quadruped_smc_ros2/include/quadruped_smc_ros2/GaitPlanner.hpp
-/home/tracy/Quadruped-Robot/install/quadruped_smc_ros2/include/quadruped_smc_ros2/SMC_controller_terminate.h
-/home/tracy/Quadruped-Robot/install/quadruped_smc_ros2/include/quadruped_smc_ros2/SMC_controller_initialize.h
 /home/tracy/Quadruped-Robot/install/quadruped_smc_ros2/share/quadruped_smc_ros2//launch/robot_launch.py
 /home/tracy/Quadruped-Robot/install/quadruped_smc_ros2/share/quadruped_smc_ros2//launch/sequence_launch.py
 /home/tracy/Quadruped-Robot/install/quadruped_smc_ros2/share/quadruped_smc_ros2//config/smc_params.yaml

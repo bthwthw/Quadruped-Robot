@@ -2,6 +2,7 @@
 /home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2/CMakeFiles/quadruped_smc_ros2_uninstall.dir
 /home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2/CMakeFiles/quadruped_smc_ros2.dir
 /home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2/CMakeFiles/gait_keyboard_node.dir
+/home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2/CMakeFiles/error_monitor_node.dir
 /home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2/CMakeFiles/test.dir
 /home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2/CMakeFiles/edit_cache.dir
 /home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2/CMakeFiles/rebuild_cache.dir

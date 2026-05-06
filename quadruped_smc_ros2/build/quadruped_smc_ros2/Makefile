@@ -223,6 +223,43 @@ gait_keyboard_node/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gait_keyboard_node.dir/build.make CMakeFiles/gait_keyboard_node.dir/build
 .PHONY : gait_keyboard_node/fast
 
+#=============================================================================
+# Target rules for targets named error_monitor_node
+
+# Build rule for target.
+error_monitor_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 error_monitor_node
+.PHONY : error_monitor_node
+
+# fast build rule for target.
+error_monitor_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/error_monitor_node.dir/build.make CMakeFiles/error_monitor_node.dir/build
+.PHONY : error_monitor_node/fast
+
+src/error_monitor_node.o: src/error_monitor_node.cpp.o
+.PHONY : src/error_monitor_node.o
+
+# target to build an object file
+src/error_monitor_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/error_monitor_node.dir/build.make CMakeFiles/error_monitor_node.dir/src/error_monitor_node.cpp.o
+.PHONY : src/error_monitor_node.cpp.o
+
+src/error_monitor_node.i: src/error_monitor_node.cpp.i
+.PHONY : src/error_monitor_node.i
+
+# target to preprocess a source file
+src/error_monitor_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/error_monitor_node.dir/build.make CMakeFiles/error_monitor_node.dir/src/error_monitor_node.cpp.i
+.PHONY : src/error_monitor_node.cpp.i
+
+src/error_monitor_node.s: src/error_monitor_node.cpp.s
+.PHONY : src/error_monitor_node.s
+
+# target to generate assembly for a file
+src/error_monitor_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/error_monitor_node.dir/build.make CMakeFiles/error_monitor_node.dir/src/error_monitor_node.cpp.s
+.PHONY : src/error_monitor_node.cpp.s
+
 src/gait_keyboard_node.o: src/gait_keyboard_node.cpp.o
 .PHONY : src/gait_keyboard_node.o
 
@@ -286,8 +323,12 @@ help:
 	@echo "... test"
 	@echo "... quadruped_smc_ros2_uninstall"
 	@echo "... uninstall"
+	@echo "... error_monitor_node"
 	@echo "... gait_keyboard_node"
 	@echo "... quadruped_smc_ros2"
+	@echo "... src/error_monitor_node.o"
+	@echo "... src/error_monitor_node.i"
+	@echo "... src/error_monitor_node.s"
 	@echo "... src/gait_keyboard_node.o"
 	@echo "... src/gait_keyboard_node.i"
 	@echo "... src/gait_keyboard_node.s"

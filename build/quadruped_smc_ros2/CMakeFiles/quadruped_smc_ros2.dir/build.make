@@ -83,62 +83,14 @@ CMakeFiles/quadruped_smc_ros2.dir/src/quadruped_driver.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/quadruped_smc_ros2.dir/src/quadruped_driver.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tracy/Quadruped-Robot/quadruped_smc_ros2/src/quadruped_driver.cpp -o CMakeFiles/quadruped_smc_ros2.dir/src/quadruped_driver.cpp.s
 
-CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller.c.o: CMakeFiles/quadruped_smc_ros2.dir/flags.make
-CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller.c.o: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/src/SMC_controller.c
-CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller.c.o: CMakeFiles/quadruped_smc_ros2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tracy/Quadruped-Robot/build/quadruped_smc_ros2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller.c.o -MF CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller.c.o.d -o CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller.c.o -c /home/tracy/Quadruped-Robot/quadruped_smc_ros2/src/SMC_controller.c
-
-CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/tracy/Quadruped-Robot/quadruped_smc_ros2/src/SMC_controller.c > CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller.c.i
-
-CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/tracy/Quadruped-Robot/quadruped_smc_ros2/src/SMC_controller.c -o CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller.c.s
-
-CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_initialize.c.o: CMakeFiles/quadruped_smc_ros2.dir/flags.make
-CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_initialize.c.o: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/src/SMC_controller_initialize.c
-CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_initialize.c.o: CMakeFiles/quadruped_smc_ros2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tracy/Quadruped-Robot/build/quadruped_smc_ros2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_initialize.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_initialize.c.o -MF CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_initialize.c.o.d -o CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_initialize.c.o -c /home/tracy/Quadruped-Robot/quadruped_smc_ros2/src/SMC_controller_initialize.c
-
-CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_initialize.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_initialize.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/tracy/Quadruped-Robot/quadruped_smc_ros2/src/SMC_controller_initialize.c > CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_initialize.c.i
-
-CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_initialize.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_initialize.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/tracy/Quadruped-Robot/quadruped_smc_ros2/src/SMC_controller_initialize.c -o CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_initialize.c.s
-
-CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_terminate.c.o: CMakeFiles/quadruped_smc_ros2.dir/flags.make
-CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_terminate.c.o: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/src/SMC_controller_terminate.c
-CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_terminate.c.o: CMakeFiles/quadruped_smc_ros2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tracy/Quadruped-Robot/build/quadruped_smc_ros2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_terminate.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_terminate.c.o -MF CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_terminate.c.o.d -o CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_terminate.c.o -c /home/tracy/Quadruped-Robot/quadruped_smc_ros2/src/SMC_controller_terminate.c
-
-CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_terminate.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_terminate.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/tracy/Quadruped-Robot/quadruped_smc_ros2/src/SMC_controller_terminate.c > CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_terminate.c.i
-
-CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_terminate.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_terminate.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/tracy/Quadruped-Robot/quadruped_smc_ros2/src/SMC_controller_terminate.c -o CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_terminate.c.s
-
 # Object files for target quadruped_smc_ros2
 quadruped_smc_ros2_OBJECTS = \
-"CMakeFiles/quadruped_smc_ros2.dir/src/quadruped_driver.cpp.o" \
-"CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller.c.o" \
-"CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_initialize.c.o" \
-"CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_terminate.c.o"
+"CMakeFiles/quadruped_smc_ros2.dir/src/quadruped_driver.cpp.o"
 
 # External object files for target quadruped_smc_ros2
 quadruped_smc_ros2_EXTERNAL_OBJECTS =
 
 libquadruped_smc_ros2.so: CMakeFiles/quadruped_smc_ros2.dir/src/quadruped_driver.cpp.o
-libquadruped_smc_ros2.so: CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller.c.o
-libquadruped_smc_ros2.so: CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_initialize.c.o
-libquadruped_smc_ros2.so: CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_terminate.c.o
 libquadruped_smc_ros2.so: CMakeFiles/quadruped_smc_ros2.dir/build.make
 libquadruped_smc_ros2.so: /opt/ros/jazzy/lib/libsensor_msgs__rosidl_typesupport_fastrtps_c.so
 libquadruped_smc_ros2.so: /opt/ros/jazzy/lib/libsensor_msgs__rosidl_typesupport_fastrtps_cpp.so
@@ -366,7 +318,7 @@ libquadruped_smc_ros2.so: /opt/ros/jazzy/lib/libbuiltin_interfaces__rosidl_gener
 libquadruped_smc_ros2.so: /opt/ros/jazzy/lib/librosidl_runtime_c.so
 libquadruped_smc_ros2.so: /opt/ros/jazzy/lib/librcutils.so
 libquadruped_smc_ros2.so: CMakeFiles/quadruped_smc_ros2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/tracy/Quadruped-Robot/build/quadruped_smc_ros2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX shared library libquadruped_smc_ros2.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/tracy/Quadruped-Robot/build/quadruped_smc_ros2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library libquadruped_smc_ros2.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/quadruped_smc_ros2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
