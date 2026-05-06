@@ -1,10 +1,14 @@
 /**
+ * quadruped_driver.cpp
+ *
  * Topics:
- *   Subscribe: /gait_command       → "trot" | "bound" | "pace" | "walk"
- *   Subscribe: /controller_command → "1" (model-free) | "2" (model-based)
+ *   Subscribe: /gait_command  → "trot" | "bound" | "pace" | "walk"
  *   Publish:   /joint_states
  *   Publish:   /gait_status
+ *
+ * Controller: Model-Based SMC (LegController2)
  */
+
 #include "quadruped_smc_ros2/quadruped_driver.hpp"
 #include <cmath>
 #include <cctype>
@@ -12,9 +16,6 @@
 namespace quadruped_smc_ros2
 {
 
-// ─────────────────────────────────────────────────────────────
-//  Helper: clamp
-// ─────────────────────────────────────────────────────────────
 static inline double clamp(double val, double lo, double hi)
 {
     if (val < lo) return lo;
@@ -22,9 +23,6 @@ static inline double clamp(double val, double lo, double hi)
     return val;
 }
 
-// ─────────────────────────────────────────────────────────────
-//  Tên device khớp với file .wbt
-// ─────────────────────────────────────────────────────────────
 static const char* MOTOR_NAMES[8] = {
     "motor_FL_hip",  "motor_FL_knee",
     "motor_FR_hip",  "motor_FR_knee",
@@ -53,45 +51,40 @@ void QuadrupedDriver::init(
     webots_ros2_driver::WebotsNode* node,
     std::unordered_map<std::string, std::string>& /*parameters*/)
 {
-    node_ = node;
-
-    // Lấy timestep qua C API
+    node_      = node;
     time_step_ = (int)wb_robot_get_basic_time_step();
     dt_        = time_step_ / 1000.0;
 
-    // Khởi tạo motors & sensors qua C API
     for (int i = 0; i < 8; ++i) {
         motors_[i]  = wb_robot_get_device(MOTOR_NAMES[i]);
         sensors_[i] = wb_robot_get_device(SENSOR_NAMES[i]);
 
-        if (sensors_[i] != 0) {
+        if (sensors_[i] != 0)
             wb_position_sensor_enable(sensors_[i], time_step_);
-        }
+
         if (motors_[i] != 0) {
             wb_motor_set_position(motors_[i], 0.0);
             wb_motor_set_velocity(motors_[i], wb_motor_get_max_velocity(motors_[i]));
         }
     }
 
-    // Khởi tạo mảng trạng thái
     for (int i = 0; i < 8; ++i) {
-        q_[i] = q_prev_[i] = dq_[i]       = 0.0;
-        q_ref_[i] = q_ref_prev_[i]        = 0.0;
-        q_ref_prev2_[i] = dq_ref_[i]      = 0.0;
+        q_[i] = q_prev_[i] = dq_[i]      = 0.0;
+        q_ref_[i] = q_ref_prev_[i]       = 0.0;
+        q_ref_prev2_[i] = dq_ref_[i]     = 0.0;
         ddq_ref_[i]                       = 0.0;
     }
 
-    // Tư thế ban đầu
     planner_.get_Trot(0.0, q_ref_);
 
-    // ── ROS2 Publishers ──────────────────────────────────────
+    // Publishers
     joint_state_pub_ = node_->create_publisher<sensor_msgs::msg::JointState>(
         "/joint_states", rclcpp::SensorDataQoS());
 
     gait_status_pub_ = node_->create_publisher<std_msgs::msg::String>(
         "/gait_status", 10);
 
-    // ── ROS2 Subscriber: /gait_command ───────────────────────
+    // Subscriber
     gait_cmd_sub_ = node_->create_subscription<std_msgs::msg::String>(
         "/gait_command", 10,
         [this](const std_msgs::msg::String::SharedPtr msg) {
@@ -106,27 +99,11 @@ void QuadrupedDriver::init(
             }
         });
 
-    // ── ROS2 Subscriber: /controller_command ─────────────────
-    ctrl_cmd_sub_ = node_->create_subscription<std_msgs::msg::String>(
-        "/controller_command", 10,
-        [this](const std_msgs::msg::String::SharedPtr msg) {
-            if (msg->data == "1") {
-                current_controller_ = 1;
-                RCLCPP_INFO(node_->get_logger(),
-                    "[QuadrupedDriver] Controller → MODEL-FREE SMC");
-            } else if (msg->data == "2") {
-                current_controller_ = 2;
-                RCLCPP_INFO(node_->get_logger(),
-                    "[QuadrupedDriver] Controller → MODEL-BASED SMC");
-            }
-        });
-
     start_time_set_ = false;
     first_step_     = true;
 
     RCLCPP_INFO(node_->get_logger(),
-        "[QuadrupedDriver] Initialized | dt=%.4fs | "
-        "Sub: /gait_command /controller_command | Pub: /joint_states /gait_status",
+        "[QuadrupedDriver] Initialized | dt=%.4fs | Controller: Model-Based SMC",
         dt_);
 }
 
@@ -143,7 +120,6 @@ void QuadrupedDriver::step()
     double t_elapsed = now - start_time_;
 
     // ── 1. Gait Planner ──────────────────────────────────────
-    // Lưu 2 bước prev để tính ddq_ref bậc 2
     for (int i = 0; i < 8; ++i) {
         q_ref_prev2_[i] = q_ref_prev_[i];
         q_ref_prev_[i]  = q_ref_[i];
@@ -162,24 +138,18 @@ void QuadrupedDriver::step()
 
     // ── 2. Đọc cảm biến & tính vận tốc / gia tốc ────────────
     for (int i = 0; i < 8; ++i) {
-        // Đạo hàm bậc 1 q_ref → dq_ref
         dq_ref_[i] = (q_ref_[i] - q_ref_prev_[i]) / dt_;
         dq_ref_[i] = clamp(dq_ref_[i], -20.0, 20.0);
 
-        // Đạo hàm bậc 2 q_ref → ddq_ref  (dùng cho model-based)
         ddq_ref_[i] = (q_ref_[i] - 2.0 * q_ref_prev_[i] + q_ref_prev2_[i])
                       / (dt_ * dt_);
         ddq_ref_[i] = clamp(ddq_ref_[i], -200.0, 200.0);
 
-        // Đọc vị trí từ cảm biến C API
-        if (sensors_[i] != 0) {
+        if (sensors_[i] != 0)
             q_[i] = wb_position_sensor_get_value(sensors_[i]);
-        }
 
-        // Bước đầu tiên: seed q_prev
         if (first_step_) q_prev_[i] = q_[i];
 
-        // Low-pass filter vận tốc
         double raw_dq = (q_[i] - q_prev_[i]) / dt_;
         dq_[i] = ALPHA_FILTER * raw_dq + (1.0 - ALPHA_FILTER) * dq_[i];
         dq_[i] = clamp(dq_[i], -30.0, 30.0);
@@ -188,17 +158,15 @@ void QuadrupedDriver::step()
     }
     first_step_ = false;
 
-    // ── 3. Motor Control ─────────────────────────────────────
+    // ── 3. Motor Control (Model-Based SMC) ───────────────────
     for (int leg = 0; leg < 4; ++leg) {
         int h = leg * 2;
         int k = leg * 2 + 1;
 
         if (t_elapsed < STANDUP_DURATION) {
-            // Giai đoạn đứng dậy: Position Control
             if (motors_[h] != 0) wb_motor_set_position(motors_[h], q_ref_[h]);
             if (motors_[k] != 0) wb_motor_set_position(motors_[k], q_ref_[k]);
         } else {
-            // Giai đoạn di chuyển: Torque Control
             if (motors_[h] != 0) wb_motor_set_position(motors_[h], INFINITY);
             if (motors_[k] != 0) wb_motor_set_position(motors_[k], INFINITY);
 
@@ -209,15 +177,8 @@ void QuadrupedDriver::step()
             double dq_leg[2]    = {dq_[h],       dq_[k]};
             double tau_out[2]   = {0.0, 0.0};
 
-            if (current_controller_ == 1) {
-                // Model-Free SMC
-                leg_controllers_free_[leg].compute_SMC(
-                    leg, dt_, q_r_leg, q_leg, dq_r_leg, dq_leg, tau_out);
-            } else {
-                // Model-Based SMC (có feed-forward động lực học)
-                leg_controllers_based_[leg].compute_SMC(
-                    leg, dt_, q_r_leg, q_leg, dq_r_leg, dq_leg, ddq_r_leg, tau_out);
-            }
+            leg_controllers_[leg].compute_SMC(
+                leg, dt_, q_r_leg, q_leg, dq_r_leg, dq_leg, ddq_r_leg, tau_out);
 
             if (motors_[h] != 0) wb_motor_set_torque(motors_[h], tau_out[0]);
             if (motors_[k] != 0) wb_motor_set_torque(motors_[k], tau_out[1]);
@@ -261,9 +222,6 @@ void QuadrupedDriver::publishGaitStatus()
 
 }  // namespace quadruped_smc_ros2
 
-// ─────────────────────────────────────────────────────────────
-//  pluginlib export
-// ─────────────────────────────────────────────────────────────
 #include "pluginlib/class_list_macros.hpp"
 PLUGINLIB_EXPORT_CLASS(
     quadruped_smc_ros2::QuadrupedDriver,

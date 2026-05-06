@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-9900fa6bbd222b3c5c99.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "quadruped_smc_ros2",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "gait_keyboard_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-gait_keyboard_node-54e3341cf232bbd07986.json",
+					"name" : "gait_keyboard_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "quadruped_smc_ros2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-quadruped_smc_ros2-d73e9e5a729229740456.json",
+					"name" : "quadruped_smc_ros2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "quadruped_smc_ros2_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-quadruped_smc_ros2_uninstall-947fcefabbe8b07f1ac4.json",
+					"name" : "quadruped_smc_ros2_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-f206a66fd3780d6f9c6e.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2",
+		"source" : "/home/tracy/Quadruped-Robot/quadruped_smc_ros2"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

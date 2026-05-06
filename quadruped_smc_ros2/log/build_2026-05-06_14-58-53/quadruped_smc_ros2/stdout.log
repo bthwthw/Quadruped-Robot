@@ -1,0 +1,4 @@
+[ 42%] [32mBuilding C object CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller.c.o[0m
+[ 42%] [32mBuilding C object CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_terminate.c.o[0m
+[ 42%] [32mBuilding C object CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_initialize.c.o[0m
+[ 71%] Built target gait_keyboard_node

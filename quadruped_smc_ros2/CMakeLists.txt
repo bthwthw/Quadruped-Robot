@@ -15,21 +15,18 @@ find_package(geometry_msgs      REQUIRED)
 find_package(pluginlib          REQUIRED)
 find_package(webots_ros2_driver REQUIRED)
 
-# ── 1. Plugin shared library ──────────────────────────────────
+#── 1. Plugin shared library ──────────────────────────────────
 add_library(${PROJECT_NAME} SHARED
     src/quadruped_driver.cpp
-    src/SMC_controller.c
-    src/SMC_controller_initialize.c
-    src/SMC_controller_terminate.c
 )
 
-# C source biên dịch như C
-set_source_files_properties(
-    src/SMC_controller.c
-    src/SMC_controller_initialize.c
-    src/SMC_controller_terminate.c
-    PROPERTIES LANGUAGE C
-)
+# # C source biên dịch như C
+# set_source_files_properties(
+#     src/SMC_controller.c
+#     src/SMC_controller_initialize.c
+#     src/SMC_controller_terminate.c
+#     PROPERTIES LANGUAGE C
+# )
 
 target_include_directories(${PROJECT_NAME} PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>

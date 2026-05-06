@@ -1,0 +1,12 @@
+[0.013s] Invoking command in '/home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2 -- -j16 -l16
+[0.120s] [ 28%] Built target gait_keyboard_node
+[0.126s] [ 42%] [32mBuilding CXX object CMakeFiles/quadruped_smc_ros2.dir/src/quadruped_driver.cpp.o[0m
+[2.454s] [01m[K/home/tracy/Quadruped-Robot/quadruped_smc_ros2/src/quadruped_driver.cpp:[m[K In member function ‘[01m[Kvirtual void quadruped_smc_ros2::QuadrupedDriver::[01;32m[Kstep[m[K()[m[K’:
+[2.455s] [01m[K/home/tracy/Quadruped-Robot/quadruped_smc_ros2/src/quadruped_driver.cpp:180:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kleg_controllers[m[K’ was not declared in this scope; did you mean ‘[01m[Kleg_controllers_[m[K’?
+[2.455s]   180 |             [01;31m[Kleg_controllers[m[K[leg].compute_SMC(
+[2.455s]       |             [01;31m[K^~~~~~~~~~~~~~~[m[K
+[2.455s]       |             [32m[Kleg_controllers_[m[K
+[4.789s] gmake[2]: *** [CMakeFiles/quadruped_smc_ros2.dir/build.make:76: CMakeFiles/quadruped_smc_ros2.dir/src/quadruped_driver.cpp.o] Error 1
+[4.790s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/quadruped_smc_ros2.dir/all] Error 2
+[4.790s] gmake: *** [Makefile:146: all] Error 2
+[4.792s] Invoked command in '/home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2 -- -j16 -l16

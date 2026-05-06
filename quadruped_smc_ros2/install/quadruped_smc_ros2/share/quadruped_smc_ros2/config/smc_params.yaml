@@ -1,0 +1,55 @@
+# smc_params.yaml
+# ─────────────────────────────────────────────────────────────
+# Tham số bộ điều khiển SMC cho Quadruped Robot
+# Load trong launch file hoặc đọc từ ROS2 param server
+#
+# Chân trước (Front): leg_id = 0 (FL), 1 (FR)
+# Chân sau  (Rear) :  leg_id = 2 (BR), 3 (BL)
+# ─────────────────────────────────────────────────────────────
+
+quadruped_driver:
+  ros__parameters:
+
+    # ── Gait Planner ─────────────────────────
+    gait:
+      period:       1.0      # chu kỳ bước (giây)
+      stride:       0.08     # sải chân (m)
+      step_height:  0.01     # độ nhấc chân (m)
+      body_height: -0.25     # chiều cao thân (m, âm = xuống)
+      L1:           0.2      # chiều dài đùi (m)
+      L2:           0.2      # chiều dài cẳng (m)
+      standup_time: 0.5      # thời gian đứng dậy (giây)
+
+    # ── SMC Gains - Chân TRƯỚC (leg_id 0, 1) ─
+    front_legs:
+      hip:
+        K:      100.0        # sliding gain
+        lambda: 150.0        # slope gain
+        Ki:      70.0        # gravity compensation integral
+        Ki_max:  45.0        # saturation integral
+      knee:
+        K:       40.0
+        lambda: 150.0
+        Ki:      15.0
+        Ki_max:  12.0
+
+    # ── SMC Gains - Chân SAU (leg_id 2, 3) ───
+    rear_legs:
+      hip:
+        K:       30.0
+        lambda:  60.0
+        Ki:      40.0
+        Ki_max:  25.0
+      knee:
+        K:       40.0
+        lambda: 150.0
+        Ki:      15.0
+        Ki_max:  12.0
+
+    # ── Chung ─────────────────────────────────
+    boundary_layer:     5.0     # Phi (độ dày lớp biên)
+    damping:            1.5     # hệ số giảm chấn
+    max_torque:       100.0     # Nm
+    velocity_filter:    0.15    # alpha low-pass vận tốc
+    dq_ref_max:        20.0     # rad/s
+    dq_max:            30.0     # rad/s
