@@ -10,10 +10,10 @@ from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
     package_dir = get_package_share_directory('quadruped_smc_ros2')
-    
+
     default_world = os.path.join(package_dir, 'resource', 'robot_8dof.wbt')
-    urdf_path = os.path.join(package_dir, 'urdf', 'robot_description.urdf')
-    
+    urdf_path     = os.path.join(package_dir, 'urdf', 'robot_description.urdf')
+
     robot_description = ''
     if os.path.exists(urdf_path):
         with open(urdf_path, 'r') as f:
@@ -58,10 +58,18 @@ def generate_launch_description():
         }]
     )
 
-    # ── Keyboard Node (gnome-terminal có sẵn trên Ubuntu) ─────
+    # ── Keyboard Node ─────────────────────────────────────────
     gait_keyboard = Node(
         package='quadruped_smc_ros2',
         executable='gait_keyboard_node',
+        output='screen',
+        prefix='gnome-terminal --',
+    )
+
+    # ── Error Monitor Node ────────────────────────────────────
+    error_monitor = Node(
+        package='quadruped_smc_ros2',
+        executable='error_monitor_node',
         output='screen',
         prefix='gnome-terminal --',
     )
@@ -80,12 +88,16 @@ def generate_launch_description():
     return LaunchDescription([
         declare_world,
         declare_use_sim_time,
-        
+
         LogInfo(msg='[Quadruped SMC] Starting Webots + ROS2 controller...'),
-        LogInfo(msg='[Quadruped SMC] Keyboard window: T=Trot  B=Bound  P=Pace  W=Walk  Q=Quit'),
-        
+        LogInfo(msg='[Quadruped SMC] Keyboard : T=Trot B=Bound P=Pace W=Walk Q=Quit'),
+        LogInfo(msg='[Quadruped SMC] Monitor  : R=Reset stats  Q=Quit'),
+        # LogInfo(msg='[Quadruped SMC] Plot 1   : FL_hip FL_knee FR_hip FR_knee'),
+        # LogInfo(msg='[Quadruped SMC] Plot 2   : BR_hip BR_knee BL_hip BL_knee'),
+
         webots_driver,
         robot_state_publisher,
         gait_keyboard,
+        error_monitor,
         shutdown_handler,
     ])

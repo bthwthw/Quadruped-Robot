@@ -191,14 +191,32 @@ void QuadrupedDriver::step()
 }
 
 // ─────────────────────────────────────────────────────────────
+// void QuadrupedDriver::publishJointStates()
+// {
+//     auto msg = sensor_msgs::msg::JointState();
+//     msg.header.stamp = node_->get_clock()->now();
+//     msg.name         = JOINT_NAMES;
+//     msg.position.assign(q_,    q_ + 8);
+//     msg.velocity.assign(dq_,   dq_ + 8);
+//     msg.effort.assign(q_ref_,  q_ref_ + 8);
+//     joint_state_pub_->publish(msg);
+// }
+
 void QuadrupedDriver::publishJointStates()
 {
     auto msg = sensor_msgs::msg::JointState();
-    msg.header.stamp = node_->get_clock()->now();
-    msg.name         = JOINT_NAMES;
-    msg.position.assign(q_,    q_ + 8);
-    msg.velocity.assign(dq_,   dq_ + 8);
-    msg.effort.assign(q_ref_,  q_ref_ + 8);
+    double sim_time = wb_robot_get_time();   // đơn vị giây
+
+    int32_t sec = static_cast<int32_t>(sim_time);
+    uint32_t nanosec = static_cast<uint32_t>((sim_time - sec) * 1e9);
+    msg.header.stamp.sec = sec;
+    msg.header.stamp.nanosec = nanosec;
+
+    msg.name = JOINT_NAMES;
+    msg.position.assign(q_, q_ + 8);
+    msg.velocity.assign(dq_, dq_ + 8);
+    msg.effort.assign(q_ref_, q_ref_ + 8);
+
     joint_state_pub_->publish(msg);
 }
 

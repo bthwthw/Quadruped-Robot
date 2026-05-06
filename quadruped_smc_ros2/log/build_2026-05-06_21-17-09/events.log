@@ -1,0 +1,156 @@
+[0.000000] (-) TimerEvent: {}
+[0.000493] (quadruped_smc_ros2) JobQueued: {'identifier': 'quadruped_smc_ros2', 'dependencies': OrderedDict()}
+[0.000669] (quadruped_smc_ros2) JobStarted: {'identifier': 'quadruped_smc_ros2'}
+[0.011061] (quadruped_smc_ros2) JobProgress: {'identifier': 'quadruped_smc_ros2', 'progress': 'cmake'}
+[0.011853] (quadruped_smc_ros2) JobProgress: {'identifier': 'quadruped_smc_ros2', 'progress': 'build'}
+[0.012417] (quadruped_smc_ros2) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2', '--', '-j16', '-l16'], 'cwd': '/home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'tracy', 'LC_TIME': 'en_US.UTF-8', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/lib:/home/tracy/ros2_ws/install/quadruped_smc_ros2/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/tracy', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'en_US.UTF-8', 'DBUS_STARTER_BUS_TYPE': 'session', 'SYSTEMD_EXEC_PID': '2428', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus,guid=54f9070ae2e10f399942cbd169fb495f', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/tracy/Quadruped-Robot/quadruped_smc_ros2/install:/home/tracy/ros2_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'tracy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/app-gnome\\x2dsession\\x2dmanager.slice/gnome-session-manager@ubuntu.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'tracy', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/tracy-Victus-by-HP-Laptop-16-e0xxx:@/tmp/.ICE-unix/2428,unix/tracy-Victus-by-HP-Laptop-16-e0xxx:/tmp/.ICE-unix/2428', 'PAPERSIZE': 'letter', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'en_US.UTF-8', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/3cf1cf4a_ba5a_441b_858d_77cea76f9cbf', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'en_US.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.UYB0O3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.139', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2:/home/tracy/ros2_ws/install/quadruped_smc_ros2:/home/tracy/ros2_ws/install/my_bot_nav2:/home/tracy/ros2_ws/install/my_bot_nav:/home/tracy/ros2_ws/install/mecanum_controller_cpp:/home/tracy/ros2_ws/install/mec_mobile_gazebo:/home/tracy/ros2_ws/install/mec_mobile:/home/tracy/ros2_ws/install/mec_mobile_description:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LC_NAME': 'en_US.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'en_US.UTF-8', 'LC_IDENTIFICATION': 'en_US.UTF-8', 'GZ_VERSION': 'harmonic', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2', 'TURTLEBOT3_MODEL': 'waffle', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'DBUS_STARTER_ADDRESS': 'unix:path=/run/user/1000/bus,guid=54f9070ae2e10f399942cbd169fb495f', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'LC_NUMERIC': 'en_US.UTF-8', 'LC_PAPER': 'en_US.UTF-8', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2:/home/tracy/ros2_ws/install/quadruped_smc_ros2:/home/tracy/ros2_ws/install/my_bot_nav2:/home/tracy/ros2_ws/install/my_bot_nav:/home/tracy/ros2_ws/install/mecanum_controller_cpp:/home/tracy/ros2_ws/install/mec_mobile_gazebo:/home/tracy/ros2_ws/install/mec_mobile:/home/tracy/ros2_ws/install/mec_mobile_description:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.099810] (-) TimerEvent: {}
+[0.116622] (quadruped_smc_ros2) StdoutLine: {'line': b'[ 66%] Built target quadruped_smc_ros2\n'}
+[0.116868] (quadruped_smc_ros2) StdoutLine: {'line': b'[ 66%] Built target gait_keyboard_node\n'}
+[0.119825] (quadruped_smc_ros2) StdoutLine: {'line': b'[ 83%] \x1b[32mBuilding CXX object CMakeFiles/error_monitor_node.dir/src/error_monitor_node.cpp.o\x1b[0m\n'}
+[0.199913] (-) TimerEvent: {}
+[0.300398] (-) TimerEvent: {}
+[0.400651] (-) TimerEvent: {}
+[0.500917] (-) TimerEvent: {}
+[0.601182] (-) TimerEvent: {}
+[0.701447] (-) TimerEvent: {}
+[0.801719] (-) TimerEvent: {}
+[0.901975] (-) TimerEvent: {}
+[1.002637] (-) TimerEvent: {}
+[1.102892] (-) TimerEvent: {}
+[1.203171] (-) TimerEvent: {}
+[1.303432] (-) TimerEvent: {}
+[1.403688] (-) TimerEvent: {}
+[1.503979] (-) TimerEvent: {}
+[1.604215] (-) TimerEvent: {}
+[1.704449] (-) TimerEvent: {}
+[1.804694] (-) TimerEvent: {}
+[1.904951] (-) TimerEvent: {}
+[2.005210] (-) TimerEvent: {}
+[2.105488] (-) TimerEvent: {}
+[2.205751] (-) TimerEvent: {}
+[2.306007] (-) TimerEvent: {}
+[2.406266] (-) TimerEvent: {}
+[2.506535] (-) TimerEvent: {}
+[2.606797] (-) TimerEvent: {}
+[2.707058] (-) TimerEvent: {}
+[2.807320] (-) TimerEvent: {}
+[2.907575] (-) TimerEvent: {}
+[3.007839] (-) TimerEvent: {}
+[3.108103] (-) TimerEvent: {}
+[3.208362] (-) TimerEvent: {}
+[3.308616] (-) TimerEvent: {}
+[3.408865] (-) TimerEvent: {}
+[3.509129] (-) TimerEvent: {}
+[3.609392] (-) TimerEvent: {}
+[3.709638] (-) TimerEvent: {}
+[3.809896] (-) TimerEvent: {}
+[3.910159] (-) TimerEvent: {}
+[4.010413] (-) TimerEvent: {}
+[4.110667] (-) TimerEvent: {}
+[4.210937] (-) TimerEvent: {}
+[4.311193] (-) TimerEvent: {}
+[4.411451] (-) TimerEvent: {}
+[4.511704] (-) TimerEvent: {}
+[4.611956] (-) TimerEvent: {}
+[4.712211] (-) TimerEvent: {}
+[4.812459] (-) TimerEvent: {}
+[4.912720] (-) TimerEvent: {}
+[5.012976] (-) TimerEvent: {}
+[5.113228] (-) TimerEvent: {}
+[5.213479] (-) TimerEvent: {}
+[5.313736] (-) TimerEvent: {}
+[5.413970] (-) TimerEvent: {}
+[5.514225] (-) TimerEvent: {}
+[5.614474] (-) TimerEvent: {}
+[5.714720] (-) TimerEvent: {}
+[5.814974] (-) TimerEvent: {}
+[5.915227] (-) TimerEvent: {}
+[6.015473] (-) TimerEvent: {}
+[6.115722] (-) TimerEvent: {}
+[6.215968] (-) TimerEvent: {}
+[6.316210] (-) TimerEvent: {}
+[6.416462] (-) TimerEvent: {}
+[6.516738] (-) TimerEvent: {}
+[6.616966] (-) TimerEvent: {}
+[6.717214] (-) TimerEvent: {}
+[6.817458] (-) TimerEvent: {}
+[6.917703] (-) TimerEvent: {}
+[7.017950] (-) TimerEvent: {}
+[7.118196] (-) TimerEvent: {}
+[7.218443] (-) TimerEvent: {}
+[7.318692] (-) TimerEvent: {}
+[7.418996] (-) TimerEvent: {}
+[7.519248] (-) TimerEvent: {}
+[7.619490] (-) TimerEvent: {}
+[7.719741] (-) TimerEvent: {}
+[7.819987] (-) TimerEvent: {}
+[7.920230] (-) TimerEvent: {}
+[8.020475] (-) TimerEvent: {}
+[8.120722] (-) TimerEvent: {}
+[8.220971] (-) TimerEvent: {}
+[8.321223] (-) TimerEvent: {}
+[8.421538] (-) TimerEvent: {}
+[8.521770] (-) TimerEvent: {}
+[8.622005] (-) TimerEvent: {}
+[8.722252] (-) TimerEvent: {}
+[8.822503] (-) TimerEvent: {}
+[8.922867] (-) TimerEvent: {}
+[9.023133] (-) TimerEvent: {}
+[9.123384] (-) TimerEvent: {}
+[9.223632] (-) TimerEvent: {}
+[9.323877] (-) TimerEvent: {}
+[9.424548] (-) TimerEvent: {}
+[9.524804] (-) TimerEvent: {}
+[9.625063] (-) TimerEvent: {}
+[9.725330] (-) TimerEvent: {}
+[9.825591] (-) TimerEvent: {}
+[9.925850] (-) TimerEvent: {}
+[10.024689] (quadruped_smc_ros2) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable error_monitor_node\x1b[0m\n'}
+[10.025936] (-) TimerEvent: {}
+[10.126135] (-) TimerEvent: {}
+[10.189764] (quadruped_smc_ros2) StdoutLine: {'line': b'[100%] Built target error_monitor_node\n'}
+[10.201296] (quadruped_smc_ros2) CommandEnded: {'returncode': 0}
+[10.202035] (quadruped_smc_ros2) JobProgress: {'identifier': 'quadruped_smc_ros2', 'progress': 'install'}
+[10.211993] (quadruped_smc_ros2) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2'], 'cwd': '/home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'tracy', 'LC_TIME': 'en_US.UTF-8', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/lib:/home/tracy/ros2_ws/install/quadruped_smc_ros2/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/tracy', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'en_US.UTF-8', 'DBUS_STARTER_BUS_TYPE': 'session', 'SYSTEMD_EXEC_PID': '2428', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus,guid=54f9070ae2e10f399942cbd169fb495f', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/tracy/Quadruped-Robot/quadruped_smc_ros2/install:/home/tracy/ros2_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'tracy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/app-gnome\\x2dsession\\x2dmanager.slice/gnome-session-manager@ubuntu.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'tracy', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/tracy-Victus-by-HP-Laptop-16-e0xxx:@/tmp/.ICE-unix/2428,unix/tracy-Victus-by-HP-Laptop-16-e0xxx:/tmp/.ICE-unix/2428', 'PAPERSIZE': 'letter', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'en_US.UTF-8', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/3cf1cf4a_ba5a_441b_858d_77cea76f9cbf', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'en_US.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.UYB0O3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.139', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2:/home/tracy/ros2_ws/install/quadruped_smc_ros2:/home/tracy/ros2_ws/install/my_bot_nav2:/home/tracy/ros2_ws/install/my_bot_nav:/home/tracy/ros2_ws/install/mecanum_controller_cpp:/home/tracy/ros2_ws/install/mec_mobile_gazebo:/home/tracy/ros2_ws/install/mec_mobile:/home/tracy/ros2_ws/install/mec_mobile_description:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LC_NAME': 'en_US.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'en_US.UTF-8', 'LC_IDENTIFICATION': 'en_US.UTF-8', 'GZ_VERSION': 'harmonic', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2', 'TURTLEBOT3_MODEL': 'waffle', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'DBUS_STARTER_ADDRESS': 'unix:path=/run/user/1000/bus,guid=54f9070ae2e10f399942cbd169fb495f', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'LC_NUMERIC': 'en_US.UTF-8', 'LC_PAPER': 'en_US.UTF-8', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2:/home/tracy/ros2_ws/install/quadruped_smc_ros2:/home/tracy/ros2_ws/install/my_bot_nav2:/home/tracy/ros2_ws/install/my_bot_nav:/home/tracy/ros2_ws/install/mecanum_controller_cpp:/home/tracy/ros2_ws/install/mec_mobile_gazebo:/home/tracy/ros2_ws/install/mec_mobile:/home/tracy/ros2_ws/install/mec_mobile_description:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[10.220706] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[10.230910] (-) TimerEvent: {}
+[10.231022] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2/plugin.xml\n'}
+[10.231412] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/lib/libquadruped_smc_ros2.so\n'}
+[10.231600] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/lib/quadruped_smc_ros2/gait_keyboard_node\n'}
+[10.231719] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Installing: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/lib/quadruped_smc_ros2/error_monitor_node\n'}
+[10.231862] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/lib/quadruped_smc_ros2/error_monitor_node" to ""\n'}
+[10.231938] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/include\n'}
+[10.232005] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/include/quadruped_smc_ros2\n'}
+[10.232096] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/include/quadruped_smc_ros2/LegController2.hpp\n'}
+[10.232164] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/include/quadruped_smc_ros2/quadruped_driver.hpp\n'}
+[10.232232] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/include/quadruped_smc_ros2/GaitPlanner.hpp\n'}
+[10.232355] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2//launch\n'}
+[10.232458] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2//launch/robot_launch.py\n'}
+[10.232528] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2//config\n'}
+[10.232595] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2//config/smc_params.yaml\n'}
+[10.232713] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2//urdf\n'}
+[10.232798] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2//urdf/robot_description.urdf\n'}
+[10.232860] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2//resource\n'}
+[10.232935] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2//resource/robot_8dof.wbt\n'}
+[10.233180] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2//resource/.robot_8dof.wbproj\n'}
+[10.233262] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2/plugin.xml\n'}
+[10.233337] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/ament_index/resource_index/package_run_dependencies/quadruped_smc_ros2\n'}
+[10.233561] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/ament_index/resource_index/parent_prefix_path/quadruped_smc_ros2\n'}
+[10.233687] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2/environment/ament_prefix_path.sh\n'}
+[10.233862] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2/environment/ament_prefix_path.dsv\n'}
+[10.233969] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2/environment/path.sh\n'}
+[10.234054] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2/environment/path.dsv\n'}
+[10.234207] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2/local_setup.bash\n'}
+[10.234343] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2/local_setup.sh\n'}
+[10.234469] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2/local_setup.zsh\n'}
+[10.234581] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2/local_setup.dsv\n'}
+[10.234736] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Installing: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2/package.dsv\n'}
+[10.234862] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/ament_index/resource_index/packages/quadruped_smc_ros2\n'}
+[10.235019] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/ament_index/resource_index/webots_ros2_driver__pluginlib__plugin/quadruped_smc_ros2\n'}
+[10.235109] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2/cmake/quadruped_smc_ros2Config.cmake\n'}
+[10.235457] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2/cmake/quadruped_smc_ros2Config-version.cmake\n'}
+[10.235555] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2/share/quadruped_smc_ros2/package.xml\n'}
+[10.235666] (quadruped_smc_ros2) CommandEnded: {'returncode': 0}
+[10.250998] (quadruped_smc_ros2) JobEnded: {'identifier': 'quadruped_smc_ros2', 'rc': 0}
+[10.251600] (-) EventReactorShutdown: {}

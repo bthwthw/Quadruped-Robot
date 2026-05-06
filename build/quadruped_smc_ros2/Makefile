@@ -223,77 +223,42 @@ gait_keyboard_node/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gait_keyboard_node.dir/build.make CMakeFiles/gait_keyboard_node.dir/build
 .PHONY : gait_keyboard_node/fast
 
-src/SMC_controller.o: src/SMC_controller.c.o
-.PHONY : src/SMC_controller.o
+#=============================================================================
+# Target rules for targets named error_monitor_node
+
+# Build rule for target.
+error_monitor_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 error_monitor_node
+.PHONY : error_monitor_node
+
+# fast build rule for target.
+error_monitor_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/error_monitor_node.dir/build.make CMakeFiles/error_monitor_node.dir/build
+.PHONY : error_monitor_node/fast
+
+src/error_monitor_node.o: src/error_monitor_node.cpp.o
+.PHONY : src/error_monitor_node.o
 
 # target to build an object file
-src/SMC_controller.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/quadruped_smc_ros2.dir/build.make CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller.c.o
-.PHONY : src/SMC_controller.c.o
+src/error_monitor_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/error_monitor_node.dir/build.make CMakeFiles/error_monitor_node.dir/src/error_monitor_node.cpp.o
+.PHONY : src/error_monitor_node.cpp.o
 
-src/SMC_controller.i: src/SMC_controller.c.i
-.PHONY : src/SMC_controller.i
-
-# target to preprocess a source file
-src/SMC_controller.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/quadruped_smc_ros2.dir/build.make CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller.c.i
-.PHONY : src/SMC_controller.c.i
-
-src/SMC_controller.s: src/SMC_controller.c.s
-.PHONY : src/SMC_controller.s
-
-# target to generate assembly for a file
-src/SMC_controller.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/quadruped_smc_ros2.dir/build.make CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller.c.s
-.PHONY : src/SMC_controller.c.s
-
-src/SMC_controller_initialize.o: src/SMC_controller_initialize.c.o
-.PHONY : src/SMC_controller_initialize.o
-
-# target to build an object file
-src/SMC_controller_initialize.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/quadruped_smc_ros2.dir/build.make CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_initialize.c.o
-.PHONY : src/SMC_controller_initialize.c.o
-
-src/SMC_controller_initialize.i: src/SMC_controller_initialize.c.i
-.PHONY : src/SMC_controller_initialize.i
+src/error_monitor_node.i: src/error_monitor_node.cpp.i
+.PHONY : src/error_monitor_node.i
 
 # target to preprocess a source file
-src/SMC_controller_initialize.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/quadruped_smc_ros2.dir/build.make CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_initialize.c.i
-.PHONY : src/SMC_controller_initialize.c.i
+src/error_monitor_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/error_monitor_node.dir/build.make CMakeFiles/error_monitor_node.dir/src/error_monitor_node.cpp.i
+.PHONY : src/error_monitor_node.cpp.i
 
-src/SMC_controller_initialize.s: src/SMC_controller_initialize.c.s
-.PHONY : src/SMC_controller_initialize.s
-
-# target to generate assembly for a file
-src/SMC_controller_initialize.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/quadruped_smc_ros2.dir/build.make CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_initialize.c.s
-.PHONY : src/SMC_controller_initialize.c.s
-
-src/SMC_controller_terminate.o: src/SMC_controller_terminate.c.o
-.PHONY : src/SMC_controller_terminate.o
-
-# target to build an object file
-src/SMC_controller_terminate.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/quadruped_smc_ros2.dir/build.make CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_terminate.c.o
-.PHONY : src/SMC_controller_terminate.c.o
-
-src/SMC_controller_terminate.i: src/SMC_controller_terminate.c.i
-.PHONY : src/SMC_controller_terminate.i
-
-# target to preprocess a source file
-src/SMC_controller_terminate.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/quadruped_smc_ros2.dir/build.make CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_terminate.c.i
-.PHONY : src/SMC_controller_terminate.c.i
-
-src/SMC_controller_terminate.s: src/SMC_controller_terminate.c.s
-.PHONY : src/SMC_controller_terminate.s
+src/error_monitor_node.s: src/error_monitor_node.cpp.s
+.PHONY : src/error_monitor_node.s
 
 # target to generate assembly for a file
-src/SMC_controller_terminate.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/quadruped_smc_ros2.dir/build.make CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_terminate.c.s
-.PHONY : src/SMC_controller_terminate.c.s
+src/error_monitor_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/error_monitor_node.dir/build.make CMakeFiles/error_monitor_node.dir/src/error_monitor_node.cpp.s
+.PHONY : src/error_monitor_node.cpp.s
 
 src/gait_keyboard_node.o: src/gait_keyboard_node.cpp.o
 .PHONY : src/gait_keyboard_node.o
@@ -358,17 +323,12 @@ help:
 	@echo "... test"
 	@echo "... quadruped_smc_ros2_uninstall"
 	@echo "... uninstall"
+	@echo "... error_monitor_node"
 	@echo "... gait_keyboard_node"
 	@echo "... quadruped_smc_ros2"
-	@echo "... src/SMC_controller.o"
-	@echo "... src/SMC_controller.i"
-	@echo "... src/SMC_controller.s"
-	@echo "... src/SMC_controller_initialize.o"
-	@echo "... src/SMC_controller_initialize.i"
-	@echo "... src/SMC_controller_initialize.s"
-	@echo "... src/SMC_controller_terminate.o"
-	@echo "... src/SMC_controller_terminate.i"
-	@echo "... src/SMC_controller_terminate.s"
+	@echo "... src/error_monitor_node.o"
+	@echo "... src/error_monitor_node.i"
+	@echo "... src/error_monitor_node.s"
 	@echo "... src/gait_keyboard_node.o"
 	@echo "... src/gait_keyboard_node.i"
 	@echo "... src/gait_keyboard_node.s"
