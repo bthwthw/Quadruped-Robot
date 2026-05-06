@@ -39,7 +39,6 @@ plot(t, y_top3, 'Color', c_orange, 'LineWidth', 1.5);
 plot(t, y_top4, 'Color', c_green,  'LineWidth', 1.5);
 grid on;
 grid minor;
-xlim([0 10]); 
 ylabel('Position [deg/rad]', 'FontSize', 12); 
 
 % Legend cho đồ thị trên
