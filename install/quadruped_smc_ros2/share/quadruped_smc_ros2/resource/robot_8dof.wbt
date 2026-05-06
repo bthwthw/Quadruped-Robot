@@ -1,0 +1,422 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/Floor.proto"
+
+WorldInfo {
+  basicTimeStep 2
+  contactProperties [
+    ContactProperties {
+      material1 "solid"
+      material2 "floor"
+      coulombFriction [
+        3
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.1715375755690608 0.08748173802613822 0.9812857920503153 1.9695698233674737
+  position 4.858831122080278 -11.404307446330343 3.5069364555795683
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+}
+Robot {
+  translation 0.2320191876787965 -1.0901422283922881 0.25683925417454095
+  rotation -0.01803750058639669 -0.019300725212751845 -0.9996510043904611 0.6606717199486136
+  children [
+    InertialUnit {
+      name "imu"
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 0.7403176415510871
+        axis 0 1 0
+        anchor 0.2 0.1 0
+        minStop -1.5
+        maxStop 1.5
+      }
+      device [
+        PositionSensor {
+          name "sensor_FL_hip"
+        }
+        RotationalMotor {
+          name "motor_FL_hip"
+          maxTorque 100
+        }
+      ]
+      endPoint Solid {
+        translation 0.13261810595019022 0.10001502745056146 -0.07374870205992994
+        rotation 1.2629070810961809e-05 0.9999999999042438 -5.658523559513718e-06 0.7403165086595976
+        children [
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              position -1.7898755850874222
+              axis 0 1 0
+              anchor 0 0 -0.1
+              minStop -2.5
+            }
+            device [
+              PositionSensor {
+                name "sensor_FL_knee"
+              }
+              RotationalMotor {
+                name "motor_FL_knee"
+                maxTorque 100
+              }
+            ]
+            endPoint Solid {
+              translation 0.09760979689537606 0 -0.07826690196865893
+              rotation 0 -1 0 1.7898755850874222
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 1 0 0
+                  }
+                  geometry Cylinder {
+                    height 0.2
+                    radius 0.015
+                  }
+                }
+              ]
+              boundingObject Shape {
+                geometry Cylinder {
+                  height 0.2
+                  radius 0.015
+                }
+              }
+              physics Physics {
+                density -1
+                mass 0.5
+              }
+              linearVelocity 0.07672545352805185 -0.04570808950883703 0.06686217755329213
+              angularVelocity 0.602405392886179 0.7983724898918153 0.13737989570839493
+            }
+          }
+          Shape {
+            appearance PBRAppearance {
+              baseColor 1 0 0
+              baseColorMap ImageTexture {
+              }
+            }
+            geometry Cylinder {
+              height 0.2
+              radius 0.02
+            }
+          }
+        ]
+        name "FL"
+        boundingObject Shape {
+          geometry Cylinder {
+            height 0.2
+            radius 0.02
+          }
+        }
+        physics Physics {
+          density -1
+          mass 1
+        }
+        linearVelocity 0.11808220319119862 -0.07891007469707119 0.15015428410099294
+        angularVelocity 0.026714081296383183 0.057767344449281305 0.14391039138394038
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 0.8435496095745022
+        axis 0 1 0
+        anchor -0.2 -0.1 0
+        minStop -1.5
+        maxStop 1.5
+      }
+      device [
+        PositionSensor {
+          name "sensor_BR_hip"
+        }
+        RotationalMotor {
+          name "motor_BR_hip"
+          maxTorque 100
+        }
+      ]
+      endPoint Solid {
+        translation -0.2746408314315487 -0.10000001472150344 -0.06642817066544661
+        rotation 1.1119069063939543e-05 0.9999999999220883 -5.673591623409969e-06 0.8435486459073261
+        children [
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              position -1.8350727557610385
+              axis 0 1 0
+              anchor 0 0 -0.1
+              minStop -2.5
+            }
+            device [
+              PositionSensor {
+                name "sensor_BR_knee"
+              }
+              RotationalMotor {
+                name "motor_BR_knee"
+                maxTorque 100
+              }
+            ]
+            endPoint Solid {
+              translation 0.09652817581852094 0 -0.07387891133301273
+              rotation 0 -1 0 1.8350727557610385
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 1 0 0
+                  }
+                  geometry Cylinder {
+                    height 0.2
+                    radius 0.015
+                  }
+                }
+              ]
+              boundingObject Shape {
+                geometry Cylinder {
+                  height 0.2
+                  radius 0.015
+                }
+              }
+              physics Physics {
+                density -1
+                mass 0.5
+              }
+              linearVelocity -0.052622263434288656 -0.02214400721474997 0.02935951206138336
+              angularVelocity 0.20884096238965824 0.2923950758107621 0.14187412748748415
+            }
+          }
+          Shape {
+            appearance PBRAppearance {
+              baseColor 1 0 0
+            }
+            geometry Cylinder {
+              height 0.2
+              radius 0.02
+            }
+          }
+        ]
+        name "BR"
+        boundingObject Shape {
+          geometry Cylinder {
+            height 0.2
+            radius 0.02
+          }
+        }
+        physics Physics {
+          density -1
+          mass 1
+        }
+        linearVelocity 0.03670440149305541 -0.09196123688361307 -0.04258068497382313
+        angularVelocity 0.8422360453299552 1.1072383908608454 0.13465955566552992
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 0.9609724510117841
+        axis 0 1 0
+        anchor -0.2 0.1 0
+        minStop -1.5
+        maxStop 1.5
+      }
+      device [
+        PositionSensor {
+          name "sensor_BL_hip"
+        }
+        RotationalMotor {
+          name "motor_BL_hip"
+          maxTorque 100
+        }
+      ]
+      endPoint Solid {
+        translation -0.2818926570716085 0.0999999899577868 -0.0572148231173102
+        rotation 9.339032664415628e-06 0.999999999941312 -5.4916947849532695e-06 0.9609713159764914
+        children [
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              position -1.8444518738688098
+              axis 0 1 0
+              anchor 0 0 -0.1
+              minStop -2.5
+            }
+            device [
+              PositionSensor {
+                name "sensor_BL_knee"
+              }
+              RotationalMotor {
+                name "motor_BL_knee"
+                maxTorque 100
+              }
+            ]
+            endPoint Solid {
+              translation 0.09627894097747339 0 -0.0729747243444967
+              rotation 0 -1 0 1.8444518738688098
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 1 0 0
+                  }
+                  geometry Cylinder {
+                    height 0.2
+                    radius 0.015
+                  }
+                }
+              ]
+              boundingObject Shape {
+                geometry Cylinder {
+                  height 0.2
+                  radius 0.015
+                }
+              }
+              physics Physics {
+                density -1
+                mass 0.5
+              }
+              linearVelocity 0.30128866641405566 -0.3025819046684561 -0.16985980699373626
+              angularVelocity -1.334427450725145 -1.693744519631209 0.1595509934548952
+            }
+          }
+          Shape {
+            appearance PBRAppearance {
+              baseColor 1 0 0
+            }
+            geometry Cylinder {
+              height 0.2
+              radius 0.02
+            }
+          }
+        ]
+        name "BL"
+        boundingObject Shape {
+          geometry Cylinder {
+            height 0.2
+            radius 0.02
+          }
+        }
+        physics Physics {
+          density -1
+          mass 1
+        }
+        linearVelocity 0.1414876391283621 -0.17634451976586052 -0.2431424120993064
+        angularVelocity -0.7341389004827468 -0.921448851554314 0.152667228919846
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 1.0436023437508268
+        axis 0 1 0
+        anchor 0.2 -0.1 0
+        minStop -1.5
+        maxStop 1.5
+      }
+      device [
+        PositionSensor {
+          name "sensor_FR_hip"
+        }
+        RotationalMotor {
+          name "motor_FR_hip"
+          maxTorque 100
+        }
+      ]
+      endPoint Solid {
+        translation 0.1136586687433937 -0.10000002447426948 -0.050263920919525536
+        rotation 8.43203541544797e-06 0.9999999999496574 -5.43930648176614e-06 1.0436012027670167
+        children [
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              position -1.7696919059134784
+              axis 0 1 0
+              anchor 0 0 -0.1
+              minStop -2.5
+            }
+            device [
+              PositionSensor {
+                name "sensor_FR_knee"
+              }
+              RotationalMotor {
+                name "motor_FR_knee"
+                maxTorque 100
+              }
+            ]
+            endPoint Solid {
+              translation 0.09802853946382266 0 -0.08024131961416428
+              rotation 0 -1 0 1.7696919059134784
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 1 0 0
+                  }
+                  geometry Cylinder {
+                    height 0.2
+                    radius 0.015
+                  }
+                }
+              ]
+              boundingObject Shape {
+                geometry Cylinder {
+                  height 0.2
+                  radius 0.015
+                }
+              }
+              physics Physics {
+                density -1
+                mass 0.5
+              }
+              linearVelocity 0.0814438858054565 -0.06023255680969233 0.06814922989366862
+              angularVelocity 0.6464753007335968 0.8553104022400653 0.1368617201665433
+            }
+          }
+          Shape {
+            appearance PBRAppearance {
+              baseColor 1 0 0
+            }
+            geometry Cylinder {
+              height 0.2
+              radius 0.02
+            }
+          }
+        ]
+        name "FR"
+        boundingObject Shape {
+          geometry Cylinder {
+            height 0.2
+            radius 0.02
+          }
+        }
+        physics Physics {
+          density -1
+          mass 1
+        }
+        linearVelocity 0.14491114936275942 -0.10317247769534177 0.14474878434796049
+        angularVelocity -0.04016804900762994 -0.028044244980718558 0.1447266094011785
+      }
+    }
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 0.498039
+      }
+      geometry Box {
+        size 0.4 0.2 0.1
+      }
+    }
+  ]
+  name "quadruped"
+  boundingObject Shape {
+    appearance PBRAppearance {
+    }
+    geometry Box {
+      size 0.4 0.2 0.1
+    }
+  }
+  physics Physics {
+    density -1
+    mass 5
+  }
+  controller "<extern>"
+  linearVelocity 0.12302722327178411 -0.10734579186074443 0.0005391752082037514
+  angularVelocity -0.461861666032271 -0.5706528378247914 0.14953777270150573
+}

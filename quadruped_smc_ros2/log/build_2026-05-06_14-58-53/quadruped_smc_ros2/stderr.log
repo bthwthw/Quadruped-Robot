@@ -1,0 +1,12 @@
+[01m[Kcc1:[m[K [01;31m[Kfatal error: [m[K/home/tracy/Quadruped-Robot/quadruped_smc_ros2/src/SMC_controller_initialize.c: No such file or directory
+[01m[Kcc1:[m[K [01;31m[Kfatal error: [m[K/home/tracy/Quadruped-Robot/quadruped_smc_ros2/src/SMC_controller.c: No such file or directory
+[01m[Kcc1:[m[K [01;31m[Kfatal error: [m[K/home/tracy/Quadruped-Robot/quadruped_smc_ros2/src/SMC_controller_terminate.c: No such file or directory
+compilation terminated.
+compilation terminated.
+compilation terminated.
+gmake[2]: *** [CMakeFiles/quadruped_smc_ros2.dir/build.make:90: CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller.c.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[2]: *** [CMakeFiles/quadruped_smc_ros2.dir/build.make:104: CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_initialize.c.o] Error 1
+gmake[2]: *** [CMakeFiles/quadruped_smc_ros2.dir/build.make:118: CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_terminate.c.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/quadruped_smc_ros2.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

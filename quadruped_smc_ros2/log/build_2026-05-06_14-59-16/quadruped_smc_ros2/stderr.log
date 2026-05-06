@@ -1,0 +1,12 @@
+[31mCMake Error at CMakeLists.txt:34 (target_include_directories):
+  Cannot specify include directories for target "quadruped_smc_ros2" which is
+  not built by this project.
+
+[0m
+[31mCMake Error at /opt/ros/jazzy/share/ament_cmake_target_dependencies/cmake/ament_target_dependencies.cmake:42 (message):
+  ament_target_dependencies() the first argument must be a valid target name
+Call Stack (most recent call first):
+  CMakeLists.txt:39 (ament_target_dependencies)
+
+[0m
+gmake: *** [Makefile:389: cmake_check_build_system] Error 1

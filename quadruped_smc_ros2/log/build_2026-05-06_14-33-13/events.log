@@ -1,0 +1,143 @@
+[0.000000] (-) TimerEvent: {}
+[0.000157] (quadruped_smc_ros2) JobQueued: {'identifier': 'quadruped_smc_ros2', 'dependencies': OrderedDict()}
+[0.000191] (quadruped_smc_ros2) JobStarted: {'identifier': 'quadruped_smc_ros2'}
+[0.010152] (quadruped_smc_ros2) JobProgress: {'identifier': 'quadruped_smc_ros2', 'progress': 'cmake'}
+[0.010769] (quadruped_smc_ros2) Command: {'cmd': ['/usr/bin/cmake', '/home/tracy/Quadruped-Robot/quadruped_smc_ros2', '-DCMAKE_INSTALL_PREFIX=/home/tracy/Quadruped-Robot/quadruped_smc_ros2/install/quadruped_smc_ros2'], 'cwd': '/home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'tracy', 'LC_TIME': 'en_US.UTF-8', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/tracy/ros2_ws/install/quadruped_smc_ros2/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/tracy', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'en_US.UTF-8', 'DBUS_STARTER_BUS_TYPE': 'session', 'SYSTEMD_EXEC_PID': '2442', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus,guid=d4a23e1fba7e19f4926dc01f69fae417', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/tracy/ros2_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'tracy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/app-gnome\\x2dsession\\x2dmanager.slice/gnome-session-manager@ubuntu.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'tracy', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/tracy-Victus-by-HP-Laptop-16-e0xxx:@/tmp/.ICE-unix/2442,unix/tracy-Victus-by-HP-Laptop-16-e0xxx:/tmp/.ICE-unix/2442', 'PAPERSIZE': 'letter', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'en_US.UTF-8', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/8a5b0b37_d8cb_4624_859e_7bbca42d571a', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'en_US.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.EG3IO3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.160', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/tracy/ros2_ws/install/quadruped_smc_ros2:/home/tracy/ros2_ws/install/my_bot_nav2:/home/tracy/ros2_ws/install/my_bot_nav:/home/tracy/ros2_ws/install/mecanum_controller_cpp:/home/tracy/ros2_ws/install/mec_mobile_gazebo:/home/tracy/ros2_ws/install/mec_mobile:/home/tracy/ros2_ws/install/mec_mobile_description:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LC_NAME': 'en_US.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'en_US.UTF-8', 'LC_IDENTIFICATION': 'en_US.UTF-8', 'GZ_VERSION': 'harmonic', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2', 'TURTLEBOT3_MODEL': 'waffle', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'DBUS_STARTER_ADDRESS': 'unix:path=/run/user/1000/bus,guid=d4a23e1fba7e19f4926dc01f69fae417', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'LC_NUMERIC': 'en_US.UTF-8', 'LC_PAPER': 'en_US.UTF-8', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/tracy/ros2_ws/install/quadruped_smc_ros2:/home/tracy/ros2_ws/install/my_bot_nav2:/home/tracy/ros2_ws/install/my_bot_nav:/home/tracy/ros2_ws/install/mecanum_controller_cpp:/home/tracy/ros2_ws/install/mec_mobile_gazebo:/home/tracy/ros2_ws/install/mec_mobile:/home/tracy/ros2_ws/install/mec_mobile_description:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.099414] (-) TimerEvent: {}
+[0.142459] (quadruped_smc_ros2) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[0.199538] (-) TimerEvent: {}
+[0.234417] (quadruped_smc_ros2) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[0.254011] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.299629] (-) TimerEvent: {}
+[0.352935] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.360921] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.361278] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.361755] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.370990] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.399767] (-) TimerEvent: {}
+[0.469908] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.477728] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.477959] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.478353] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.493110] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.499835] (-) TimerEvent: {}
+[0.600050] (-) TimerEvent: {}
+[0.645782] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[0.700115] (-) TimerEvent: {}
+[0.800403] (-) TimerEvent: {}
+[0.803148] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Found rclcpp: 28.1.11 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[0.882364] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[0.900491] (-) TimerEvent: {}
+[0.907027] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[0.936791] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.966320] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.000593] (-) TimerEvent: {}
+[1.080964] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[1.087478] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.100699] (-) TimerEvent: {}
+[1.200955] (-) TimerEvent: {}
+[1.203569] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  \n'}
+[1.225808] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") \n'}
+[1.248772] (quadruped_smc_ros2) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.301048] (-) TimerEvent: {}
+[1.353268] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)\n'}
+[1.374187] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)\n'}
+[1.401128] (-) TimerEvent: {}
+[1.426563] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Found pluginlib: 5.4.2 (/opt/ros/jazzy/share/pluginlib/cmake)\n'}
+[1.456009] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Found webots_ros2_driver: 2025.0.0 (/opt/ros/jazzy/share/webots_ros2_driver/cmake)\n'}
+[1.498849] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)\n'}
+[1.500221] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[1.500311] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[1.501180] (-) TimerEvent: {}
+[1.601357] (-) TimerEvent: {}
+[1.701585] (-) TimerEvent: {}
+[1.756023] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[1.801671] (-) TimerEvent: {}
+[1.881221] (quadruped_smc_ros2) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[1.888016] (quadruped_smc_ros2) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[1.888274] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/tracy/Quadruped-Robot/quadruped_smc_ros2/include>\n'}
+[1.888370] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[1.894922] (quadruped_smc_ros2) StdoutLine: {'line': b"-- Added test 'cpplint' to check C / C++ code against the Google style\n"}
+[1.895079] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Configured cpplint exclude dirs and/or files: \n'}
+[1.896602] (quadruped_smc_ros2) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[1.896684] (quadruped_smc_ros2) StdoutLine: {'line': b"-- Configured 'flake8' exclude dirs and/or files: \n"}
+[1.899275] (quadruped_smc_ros2) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[1.900956] (quadruped_smc_ros2) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[1.901739] (-) TimerEvent: {}
+[1.907985] (quadruped_smc_ros2) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[1.908207] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[1.909775] (quadruped_smc_ros2) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[1.911925] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Configuring done (1.9s)\n'}
+[1.981040] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Generating done (0.1s)\n'}
+[1.987046] (quadruped_smc_ros2) StdoutLine: {'line': b'-- Build files have been written to: /home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2\n'}
+[1.998501] (quadruped_smc_ros2) CommandEnded: {'returncode': 0}
+[1.999701] (quadruped_smc_ros2) JobProgress: {'identifier': 'quadruped_smc_ros2', 'progress': 'build'}
+[1.999726] (quadruped_smc_ros2) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2', '--', '-j16', '-l16'], 'cwd': '/home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'tracy', 'LC_TIME': 'en_US.UTF-8', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/tracy/ros2_ws/install/quadruped_smc_ros2/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/tracy', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'en_US.UTF-8', 'DBUS_STARTER_BUS_TYPE': 'session', 'SYSTEMD_EXEC_PID': '2442', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus,guid=d4a23e1fba7e19f4926dc01f69fae417', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/tracy/ros2_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'tracy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/app-gnome\\x2dsession\\x2dmanager.slice/gnome-session-manager@ubuntu.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'tracy', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/tracy-Victus-by-HP-Laptop-16-e0xxx:@/tmp/.ICE-unix/2442,unix/tracy-Victus-by-HP-Laptop-16-e0xxx:/tmp/.ICE-unix/2442', 'PAPERSIZE': 'letter', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'en_US.UTF-8', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/8a5b0b37_d8cb_4624_859e_7bbca42d571a', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'en_US.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.EG3IO3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.160', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/tracy/ros2_ws/install/quadruped_smc_ros2:/home/tracy/ros2_ws/install/my_bot_nav2:/home/tracy/ros2_ws/install/my_bot_nav:/home/tracy/ros2_ws/install/mecanum_controller_cpp:/home/tracy/ros2_ws/install/mec_mobile_gazebo:/home/tracy/ros2_ws/install/mec_mobile:/home/tracy/ros2_ws/install/mec_mobile_description:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LC_NAME': 'en_US.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'en_US.UTF-8', 'LC_IDENTIFICATION': 'en_US.UTF-8', 'GZ_VERSION': 'harmonic', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2', 'TURTLEBOT3_MODEL': 'waffle', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'DBUS_STARTER_ADDRESS': 'unix:path=/run/user/1000/bus,guid=d4a23e1fba7e19f4926dc01f69fae417', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'LC_NUMERIC': 'en_US.UTF-8', 'LC_PAPER': 'en_US.UTF-8', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/tracy/ros2_ws/install/quadruped_smc_ros2:/home/tracy/ros2_ws/install/my_bot_nav2:/home/tracy/ros2_ws/install/my_bot_nav:/home/tracy/ros2_ws/install/mecanum_controller_cpp:/home/tracy/ros2_ws/install/mec_mobile_gazebo:/home/tracy/ros2_ws/install/mec_mobile:/home/tracy/ros2_ws/install/mec_mobile_description:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[2.001801] (-) TimerEvent: {}
+[2.055739] (quadruped_smc_ros2) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding CXX object CMakeFiles/gait_keyboard_node.dir/src/gait_keyboard_node.cpp.o\x1b[0m\n'}
+[2.055974] (quadruped_smc_ros2) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding CXX object CMakeFiles/quadruped_smc_ros2.dir/src/quadruped_driver.cpp.o\x1b[0m\n'}
+[2.056074] (quadruped_smc_ros2) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding C object CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_initialize.c.o\x1b[0m\n'}
+[2.056168] (quadruped_smc_ros2) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding C object CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller_terminate.c.o\x1b[0m\n'}
+[2.056247] (quadruped_smc_ros2) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding C object CMakeFiles/quadruped_smc_ros2.dir/src/SMC_controller.c.o\x1b[0m\n'}
+[2.101935] (-) TimerEvent: {}
+[2.202227] (-) TimerEvent: {}
+[2.302477] (-) TimerEvent: {}
+[2.402822] (-) TimerEvent: {}
+[2.503081] (-) TimerEvent: {}
+[2.603345] (-) TimerEvent: {}
+[2.703584] (-) TimerEvent: {}
+[2.803847] (-) TimerEvent: {}
+[2.904127] (-) TimerEvent: {}
+[3.004371] (-) TimerEvent: {}
+[3.104722] (-) TimerEvent: {}
+[3.204955] (-) TimerEvent: {}
+[3.305205] (-) TimerEvent: {}
+[3.405447] (-) TimerEvent: {}
+[3.505701] (-) TimerEvent: {}
+[3.605985] (-) TimerEvent: {}
+[3.706231] (-) TimerEvent: {}
+[3.806477] (-) TimerEvent: {}
+[3.906728] (-) TimerEvent: {}
+[4.006995] (-) TimerEvent: {}
+[4.107663] (-) TimerEvent: {}
+[4.207924] (-) TimerEvent: {}
+[4.278664] (quadruped_smc_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/tracy/Quadruped-Robot/quadruped_smc_ros2/src/quadruped_driver.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void quadruped_smc_ros2::QuadrupedDriver::\x1b[01;32m\x1b[Kstep\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.279181] (quadruped_smc_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/tracy/Quadruped-Robot/quadruped_smc_ros2/src/quadruped_driver.cpp:180:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kleg_controllers\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kleg_controllers_\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[4.279309] (quadruped_smc_ros2) StderrLine: {'line': b'  180 |             \x1b[01;31m\x1b[Kleg_controllers\x1b[m\x1b[K[leg].compute_SMC(\n'}
+[4.279407] (quadruped_smc_ros2) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.279474] (quadruped_smc_ros2) StderrLine: {'line': b'      |             \x1b[32m\x1b[Kleg_controllers_\x1b[m\x1b[K\n'}
+[4.308034] (-) TimerEvent: {}
+[4.408286] (-) TimerEvent: {}
+[4.508508] (-) TimerEvent: {}
+[4.608758] (-) TimerEvent: {}
+[4.709009] (-) TimerEvent: {}
+[4.743852] (quadruped_smc_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/tracy/Quadruped-Robot/quadruped_smc_ros2/src/gait_keyboard_node.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kchar\x1b[01;32m\x1b[K getKeyNonBlocking\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.744206] (quadruped_smc_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/tracy/Quadruped-Robot/quadruped_smc_ros2/src/gait_keyboard_node.cpp:33:9:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kignoring return value of \xe2\x80\x98\x1b[01m\x1b[Kssize_t\x1b[01;32m\x1b[K read\x1b[m\x1b[K(int, void*, size_t)\x1b[m\x1b[K\xe2\x80\x99 declared with attribute \xe2\x80\x98\x1b[01m\x1b[Kwarn_unused_result\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result\x07-Wunused-result\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[4.744304] (quadruped_smc_ros2) StderrLine: {'line': b'   33 |     \x1b[01;35m\x1b[Kread(STDIN_FILENO, &ch, 1)\x1b[m\x1b[K;\n'}
+[4.744376] (quadruped_smc_ros2) StderrLine: {'line': b'      |     \x1b[01;35m\x1b[K~~~~^~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.809125] (-) TimerEvent: {}
+[4.909388] (-) TimerEvent: {}
+[5.009628] (-) TimerEvent: {}
+[5.109887] (-) TimerEvent: {}
+[5.210149] (-) TimerEvent: {}
+[5.310991] (-) TimerEvent: {}
+[5.411250] (-) TimerEvent: {}
+[5.511521] (-) TimerEvent: {}
+[5.611783] (-) TimerEvent: {}
+[5.712031] (-) TimerEvent: {}
+[5.812339] (-) TimerEvent: {}
+[5.912626] (-) TimerEvent: {}
+[6.012897] (-) TimerEvent: {}
+[6.113562] (-) TimerEvent: {}
+[6.213953] (-) TimerEvent: {}
+[6.314208] (-) TimerEvent: {}
+[6.414476] (-) TimerEvent: {}
+[6.416100] (quadruped_smc_ros2) StdoutLine: {'line': b'[ 85%] \x1b[32m\x1b[1mLinking CXX executable gait_keyboard_node\x1b[0m\n'}
+[6.514587] (-) TimerEvent: {}
+[6.563251] (quadruped_smc_ros2) StdoutLine: {'line': b'[ 85%] Built target gait_keyboard_node\n'}
+[6.566918] (quadruped_smc_ros2) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/quadruped_smc_ros2.dir/build.make:76: CMakeFiles/quadruped_smc_ros2.dir/src/quadruped_driver.cpp.o] Error 1\n'}
+[6.567181] (quadruped_smc_ros2) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/quadruped_smc_ros2.dir/all] Error 2\n'}
+[6.567389] (quadruped_smc_ros2) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[6.569947] (quadruped_smc_ros2) CommandEnded: {'returncode': 2}
+[6.590464] (quadruped_smc_ros2) JobEnded: {'identifier': 'quadruped_smc_ros2', 'rc': 2}
+[6.601092] (-) EventReactorShutdown: {}

@@ -1,0 +1,30 @@
+[0.011s] Invoking command in '/home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2 -- -j16 -l16
+[0.043s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.238s] -- Found rclcpp: 28.1.11 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.270s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.280s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.293s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.307s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.373s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.375s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.442s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.511s] -- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+[0.526s] -- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[0.566s] -- Found pluginlib: 5.4.2 (/opt/ros/jazzy/share/pluginlib/cmake)
+[0.572s] -- Found webots_ros2_driver: 2025.0.0 (/opt/ros/jazzy/share/webots_ros2_driver/cmake)
+[0.582s] -- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)
+[0.584s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[0.764s] [31mCMake Error at CMakeLists.txt:34 (target_include_directories):
+[0.764s]   Cannot specify include directories for target "quadruped_smc_ros2" which is
+[0.764s]   not built by this project.
+[0.764s] 
+[0.764s] [0m
+[0.764s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_target_dependencies/cmake/ament_target_dependencies.cmake:42 (message):
+[0.764s]   ament_target_dependencies() the first argument must be a valid target name
+[0.764s] Call Stack (most recent call first):
+[0.764s]   CMakeLists.txt:39 (ament_target_dependencies)
+[0.764s] 
+[0.764s] [0m
+[0.764s] -- Configuring incomplete, errors occurred!
+[0.772s] gmake: *** [Makefile:389: cmake_check_build_system] Error 1
+[0.774s] Invoked command in '/home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/tracy/Quadruped-Robot/quadruped_smc_ros2/build/quadruped_smc_ros2 -- -j16 -l16
